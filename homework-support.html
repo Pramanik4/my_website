@@ -1,0 +1,2177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Homework Support | NextSprout</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* =========================================================
+       NEXTSPROUT DESIGN SYSTEM
+    ========================================================= */
+
+    :root {
+      --purple: #5425A8;
+      --purple-dark: #3F1888;
+      --purple-light: #F1EAFF;
+
+      --teal: #8EDFE5;
+      --teal-dark: #207E88;
+      --teal-light: #E9FBFC;
+
+      --yellow: #FFE59A;
+      --yellow-light: #FFF7D8;
+
+      --cream: #FFFDF7;
+
+      --ink: #33204F;
+      --text: #443A50;
+      --muted: #756B80;
+
+      --white: #FFFFFF;
+      --line: #EAE4F0;
+
+      --green: #4FA96D;
+
+      --shadow: 0 18px 50px rgba(51, 32, 79, .08);
+      --shadow-hover: 0 24px 60px rgba(51, 32, 79, .13);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(14px);
+
+      border-bottom: 1px solid rgba(234,228,240,.8);
+    }
+
+    .nav {
+      height: 76px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      text-decoration: none;
+
+      color: var(--ink);
+
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -.4px;
+    }
+
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+
+      border-radius: 14px 14px 14px 5px;
+
+      background: var(--purple);
+
+      display: grid;
+      place-items: center;
+
+      transform: rotate(-3deg);
+
+      box-shadow: 0 8px 18px rgba(84,37,168,.18);
+    }
+
+    .logo-mark svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+
+      color: var(--muted);
+
+      font-size: .91rem;
+      font-weight: 600;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: inherit;
+
+      transition: .2s ease;
+    }
+
+    nav a:hover {
+      color: var(--purple);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-btn {
+      padding: 11px 18px;
+
+      border-radius: 999px;
+
+      background: var(--purple);
+      color: white;
+
+      text-decoration: none;
+
+      font-size: .88rem;
+      font-weight: 700;
+
+      transition: .2s ease;
+    }
+
+    .nav-btn:hover {
+      background: var(--purple-dark);
+      transform: translateY(-1px);
+    }
+
+    .cart-button {
+      border: 1px solid var(--line);
+
+      background: white;
+
+      padding: 9px 13px;
+
+      border-radius: 999px;
+
+      cursor: pointer;
+
+      font-family: inherit;
+
+      font-size: .85rem;
+      font-weight: 700;
+
+      color: var(--ink);
+
+      transition: .2s ease;
+    }
+
+    .cart-button:hover {
+      border-color: #d7cbea;
+      background: var(--purple-light);
+    }
+
+    .cart-count {
+      display: inline-grid;
+      place-items: center;
+
+      min-width: 22px;
+      height: 22px;
+
+      padding: 0 5px;
+
+      border-radius: 50%;
+
+      background: var(--purple);
+
+      color: white;
+
+      font-size: .7rem;
+
+      margin-left: 3px;
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      padding: 78px 20px 70px;
+
+      background:
+        radial-gradient(
+          circle at 8% 25%,
+          rgba(142,223,229,.28),
+          transparent 25%
+        ),
+        radial-gradient(
+          circle at 92% 15%,
+          rgba(255,229,154,.35),
+          transparent 25%
+        );
+
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      width: min(1120px, 92%);
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns: 1.05fr .95fr;
+
+      align-items: center;
+
+      gap: 60px;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+
+      padding: 7px 13px;
+
+      border-radius: 999px;
+
+      background: var(--yellow);
+
+      color: var(--ink);
+
+      font-size: .73rem;
+      font-weight: 800;
+
+      letter-spacing: .6px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      max-width: 650px;
+
+      color: var(--ink);
+
+      font-size: clamp(42px, 5.2vw, 64px);
+
+      line-height: 1.08;
+
+      letter-spacing: -2px;
+
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--purple);
+    }
+
+    .hero-text {
+      max-width: 610px;
+
+      color: var(--muted);
+
+      font-size: 17px;
+
+      line-height: 1.8;
+
+      margin-bottom: 25px;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+
+      gap: 10px;
+
+      color: var(--ink);
+
+      font-size: .87rem;
+
+      font-weight: 600;
+    }
+
+    .hero-note-dot {
+      width: 9px;
+      height: 9px;
+
+      border-radius: 50%;
+
+      background: var(--teal-dark);
+    }
+
+
+    /* =========================================================
+       HERO ART
+    ========================================================= */
+
+    .hero-art {
+      min-height: 380px;
+
+      position: relative;
+
+      display: grid;
+
+      place-items: center;
+
+      background: var(--purple-light);
+
+      border-radius: 34px;
+
+      overflow: hidden;
+    }
+
+    .hero-art::before {
+      content: "";
+
+      position: absolute;
+
+      width: 170px;
+      height: 170px;
+
+      border-radius: 50%;
+
+      background: var(--yellow);
+
+      top: -65px;
+      right: -45px;
+
+      opacity: .85;
+    }
+
+    .hero-art::after {
+      content: "";
+
+      position: absolute;
+
+      width: 120px;
+      height: 120px;
+
+      border-radius: 50%;
+
+      background: var(--teal);
+
+      bottom: -50px;
+      left: -35px;
+
+      opacity: .75;
+    }
+
+    .homework-art {
+      position: relative;
+
+      width: 270px;
+      height: 250px;
+
+      z-index: 2;
+    }
+
+    /* notebook */
+
+    .notebook {
+      position: absolute;
+
+      width: 175px;
+      height: 205px;
+
+      left: 45px;
+      top: 22px;
+
+      background: white;
+
+      border-radius: 12px 18px 18px 12px;
+
+      transform: rotate(-5deg);
+
+      box-shadow: 0 22px 40px rgba(51,32,79,.13);
+    }
+
+    .notebook::before {
+      content: "";
+
+      position: absolute;
+
+      left: 28px;
+      top: 28px;
+
+      width: 75px;
+      height: 8px;
+
+      border-radius: 99px;
+
+      background: var(--purple);
+    }
+
+    .notebook::after {
+      content: "";
+
+      position: absolute;
+
+      left: 28px;
+      top: 52px;
+
+      width: 110px;
+      height: 6px;
+
+      border-radius: 99px;
+
+      background: var(--teal);
+    }
+
+    .notebook-line {
+      position: absolute;
+
+      left: 28px;
+      right: 25px;
+
+      height: 5px;
+
+      border-radius: 99px;
+
+      background: #E9E4F0;
+    }
+
+    .notebook-line.one {
+      top: 92px;
+    }
+
+    .notebook-line.two {
+      top: 115px;
+    }
+
+    .notebook-line.three {
+      top: 138px;
+    }
+
+    .notebook-line.four {
+      top: 161px;
+    }
+
+
+    /* pencil */
+
+    .pencil {
+      position: absolute;
+
+      width: 135px;
+      height: 20px;
+
+      right: 5px;
+      bottom: 54px;
+
+      background: var(--yellow);
+
+      border-radius: 5px;
+
+      transform: rotate(-42deg);
+
+      box-shadow: 0 9px 18px rgba(51,32,79,.12);
+    }
+
+    .pencil::before {
+      content: "";
+
+      position: absolute;
+
+      left: -15px;
+      top: 0;
+
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+
+      border-right: 18px solid #E8D6B0;
+    }
+
+    .pencil::after {
+      content: "";
+
+      position: absolute;
+
+      right: 0;
+      top: 0;
+
+      width: 18px;
+      height: 20px;
+
+      background: var(--teal);
+
+      border-radius: 0 5px 5px 0;
+    }
+
+
+    .check-card {
+      position: absolute;
+
+      right: 8px;
+      top: 45px;
+
+      width: 70px;
+      height: 70px;
+
+      border-radius: 18px;
+
+      background: var(--teal);
+
+      display: grid;
+
+      place-items: center;
+
+      transform: rotate(5deg);
+
+      box-shadow: 0 15px 30px rgba(51,32,79,.12);
+    }
+
+    .check-card svg {
+      width: 38px;
+      height: 38px;
+    }
+
+    .floating-card {
+      position: absolute;
+
+      z-index: 4;
+
+      background: white;
+
+      border: 1px solid var(--line);
+
+      border-radius: 14px;
+
+      padding: 11px 14px;
+
+      box-shadow: 0 12px 28px rgba(51,32,79,.1);
+
+      font-size: .73rem;
+
+      font-weight: 700;
+
+      color: var(--ink);
+    }
+
+    .floating-card.one {
+      left: 17px;
+      top: 72px;
+    }
+
+    .floating-card.two {
+      right: 28px;
+      bottom: 45px;
+    }
+
+
+    /* =========================================================
+       SECTION
+    ========================================================= */
+
+    .section {
+      padding: 82px 0;
+    }
+
+    .section-head {
+      width: min(720px, 92%);
+
+      margin: 0 auto 45px;
+
+      text-align: center;
+    }
+
+    .section-kicker {
+      display: inline-block;
+
+      color: var(--purple);
+
+      font-size: .72rem;
+
+      font-weight: 800;
+
+      letter-spacing: 1.2px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 10px;
+    }
+
+    .section-head h2 {
+      color: var(--ink);
+
+      font-size: clamp(30px, 4vw, 43px);
+
+      line-height: 1.15;
+
+      letter-spacing: -1px;
+
+      margin-bottom: 12px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+
+      font-size: 15px;
+    }
+
+
+    /* =========================================================
+       SUPPORT CARDS
+    ========================================================= */
+
+    .support-section {
+      background: var(--cream);
+    }
+
+    .support-grid {
+      width: min(1050px, 92%);
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 25px;
+    }
+
+    .support-card {
+      position: relative;
+
+      background: white;
+
+      border: 1px solid var(--line);
+
+      border-radius: 28px;
+
+      padding: 34px;
+
+      box-shadow: var(--shadow);
+
+      overflow: hidden;
+
+      transition: .25s ease;
+    }
+
+    .support-card:hover {
+      transform: translateY(-5px);
+
+      box-shadow: var(--shadow-hover);
+    }
+
+    .support-card.chat {
+      background: var(--teal-light);
+    }
+
+    .support-card.video {
+      background: var(--purple-light);
+    }
+
+    .support-card::after {
+      content: "";
+
+      position: absolute;
+
+      width: 130px;
+      height: 130px;
+
+      border-radius: 50%;
+
+      right: -55px;
+      bottom: -55px;
+
+      background: rgba(255,229,154,.7);
+    }
+
+    .support-icon {
+      width: 68px;
+      height: 68px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 20px;
+
+      background: white;
+
+      margin-bottom: 20px;
+
+      box-shadow: 0 10px 25px rgba(51,32,79,.07);
+    }
+
+    .support-icon svg {
+      width: 38px;
+      height: 38px;
+    }
+
+    .program-tag {
+      display: inline-block;
+
+      padding: 6px 12px;
+
+      border-radius: 999px;
+
+      background: white;
+
+      color: var(--purple);
+
+      font-size: .69rem;
+
+      font-weight: 800;
+
+      letter-spacing: .5px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 17px;
+    }
+
+    .support-card h3 {
+      position: relative;
+
+      z-index: 2;
+
+      color: var(--ink);
+
+      font-size: 27px;
+
+      margin-bottom: 10px;
+    }
+
+    .program-description {
+      position: relative;
+
+      z-index: 2;
+
+      color: var(--muted);
+
+      font-size: 14px;
+
+      line-height: 1.75;
+
+      margin-bottom: 23px;
+
+      max-width: 470px;
+    }
+
+    .features {
+      position: relative;
+
+      z-index: 2;
+
+      list-style: none;
+
+      margin-bottom: 25px;
+    }
+
+    .features li {
+      color: var(--text);
+
+      font-size: 13px;
+
+      margin-bottom: 10px;
+    }
+
+    .features li::before {
+      content: "";
+
+      display: inline-block;
+
+      width: 18px;
+      height: 18px;
+
+      margin-right: 9px;
+
+      vertical-align: -5px;
+
+      border-radius: 50%;
+
+      background: var(--yellow);
+
+    }
+
+    .price {
+      position: relative;
+
+      z-index: 2;
+
+      color: var(--ink);
+
+      font-size: 33px;
+
+      font-weight: 800;
+
+      margin-bottom: 17px;
+    }
+
+    .price span {
+      font-size: 13px;
+
+      font-weight: 500;
+
+      color: var(--muted);
+    }
+
+    .buy-btn {
+      position: relative;
+
+      z-index: 2;
+
+      width: 100%;
+
+      border: none;
+
+      padding: 14px 20px;
+
+      border-radius: 999px;
+
+      background: var(--purple);
+
+      color: white;
+
+      font-family: inherit;
+
+      font-size: 14px;
+
+      font-weight: 800;
+
+      cursor: pointer;
+
+      transition: .2s ease;
+    }
+
+    .buy-btn:hover {
+      background: var(--purple-dark);
+
+      transform: translateY(-1px);
+    }
+
+
+    /* =========================================================
+       HOW IT WORKS
+    ========================================================= */
+
+    .how-section {
+      background: var(--teal-light);
+    }
+
+    .steps {
+      width: min(1050px, 92%);
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 20px;
+    }
+
+    .step {
+      background: white;
+
+      border-radius: 22px;
+
+      border: 1px solid rgba(32,126,136,.12);
+
+      padding: 27px;
+    }
+
+    .step-number {
+      width: 42px;
+      height: 42px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 14px;
+
+      background: var(--purple-light);
+
+      color: var(--purple);
+
+      font-weight: 800;
+
+      font-size: 15px;
+
+      margin-bottom: 17px;
+    }
+
+    .step h3 {
+      color: var(--ink);
+
+      font-size: 18px;
+
+      margin-bottom: 7px;
+    }
+
+    .step p {
+      color: var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.7;
+    }
+
+
+    /* =========================================================
+       INFO / VALUE SECTION
+    ========================================================= */
+
+    .value-grid {
+      width: min(1050px, 92%);
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 18px;
+    }
+
+    .value-card {
+      background: white;
+
+      border: 1px solid var(--line);
+
+      border-radius: 22px;
+
+      padding: 26px;
+    }
+
+    .value-card h3 {
+      color: var(--ink);
+
+      font-size: 18px;
+
+      margin-bottom: 7px;
+    }
+
+    .value-card p {
+      color: var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.7;
+    }
+
+
+    /* =========================================================
+       CTA
+    ========================================================= */
+
+    .cta-section {
+      padding: 80px 0;
+    }
+
+    .cta {
+      width: min(1050px, 92%);
+
+      margin: auto;
+
+      padding: 52px;
+
+      border-radius: 32px;
+
+      background: var(--purple);
+
+      position: relative;
+
+      overflow: hidden;
+
+      color: white;
+    }
+
+    .cta::before {
+      content: "";
+
+      position: absolute;
+
+      width: 220px;
+      height: 220px;
+
+      border-radius: 50%;
+
+      background: rgba(142,223,229,.22);
+
+      right: -80px;
+      top: -100px;
+    }
+
+    .cta::after {
+      content: "";
+
+      position: absolute;
+
+      width: 150px;
+      height: 150px;
+
+      border-radius: 50%;
+
+      background: rgba(255,229,154,.25);
+
+      left: -65px;
+      bottom: -75px;
+    }
+
+    .cta-content {
+      position: relative;
+
+      z-index: 2;
+
+      max-width: 680px;
+    }
+
+    .cta .kicker {
+      background: var(--yellow);
+
+      color: var(--ink);
+    }
+
+    .cta h2 {
+      font-size: clamp(30px, 4vw, 44px);
+
+      line-height: 1.15;
+
+      margin-bottom: 13px;
+    }
+
+    .cta p {
+      color: rgba(255,255,255,.8);
+
+      font-size: 15px;
+
+      line-height: 1.75;
+
+      margin-bottom: 24px;
+    }
+
+    .cta-button {
+      display: inline-block;
+
+      padding: 12px 20px;
+
+      border-radius: 999px;
+
+      background: white;
+
+      color: var(--purple);
+
+      text-decoration: none;
+
+      font-size: .84rem;
+
+      font-weight: 800;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      padding: 28px 0;
+
+      background: white;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+    }
+
+    .footer-brand {
+      color: var(--ink);
+
+      font-size: .9rem;
+
+      font-weight: 800;
+    }
+
+    footer p {
+      color: var(--muted);
+
+      font-size: .78rem;
+    }
+
+
+    /* =========================================================
+       CART
+    ========================================================= */
+
+    .cart-overlay {
+      position: fixed;
+
+      inset: 0;
+
+      background: rgba(51,32,79,.35);
+
+      z-index: 100;
+
+      display: none;
+    }
+
+    .cart-overlay.active {
+      display: block;
+    }
+
+    .cart-drawer {
+      position: fixed;
+
+      right: 0;
+      top: 0;
+
+      height: 100vh;
+
+      width: min(430px, 92%);
+
+      background: white;
+
+      z-index: 101;
+
+      padding: 25px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      box-shadow: -12px 0 40px rgba(51,32,79,.15);
+
+      transform: translateX(100%);
+
+      transition: .3s ease;
+    }
+
+    .cart-drawer.active {
+      transform: translateX(0);
+    }
+
+    .cart-header {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      padding-bottom: 20px;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .cart-header h2 {
+      color: var(--ink);
+
+      font-size: 22px;
+    }
+
+    .close-cart {
+      border: none;
+
+      background: var(--purple-light);
+
+      color: var(--purple);
+
+      width: 36px;
+      height: 36px;
+
+      border-radius: 50%;
+
+      cursor: pointer;
+
+      font-size: 18px;
+    }
+
+    .cart-items {
+      flex: 1;
+
+      overflow-y: auto;
+
+      padding: 20px 0;
+    }
+
+    .cart-item {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 15px;
+
+      padding: 16px 0;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .cart-item-info {
+      min-width: 0;
+    }
+
+    .cart-item-name {
+      color: var(--ink);
+
+      font-size: 15px;
+
+      font-weight: 700;
+
+      margin-bottom: 3px;
+    }
+
+    .cart-item-meta {
+      color: var(--muted);
+
+      font-size: 13px;
+    }
+
+    .cart-item-right {
+      text-align: right;
+
+      flex-shrink: 0;
+    }
+
+    .cart-item-right strong {
+      display: block;
+
+      color: var(--ink);
+
+      font-size: 14px;
+
+      margin-bottom: 4px;
+    }
+
+    .cart-remove {
+      border: none;
+
+      background: none;
+
+      color: #b45b5b;
+
+      cursor: pointer;
+
+      font-family: inherit;
+
+      font-size: 12px;
+
+      margin-top: 5px;
+    }
+
+    .cart-remove:hover {
+      text-decoration: underline;
+    }
+
+    .cart-footer {
+      border-top: 1px solid var(--line);
+
+      padding-top: 20px;
+    }
+
+    .cart-total {
+      margin-bottom: 15px;
+    }
+
+    .cart-total-row {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      color: var(--ink);
+
+      font-size: 15px;
+
+      font-weight: 800;
+
+      margin-bottom: 6px;
+    }
+
+    .checkout-btn {
+      width: 100%;
+
+      padding: 14px;
+
+      border: none;
+
+      border-radius: 14px;
+
+      background: var(--purple);
+
+      color: white;
+
+      font-family: inherit;
+
+      font-size: 15px;
+
+      font-weight: 800;
+
+      cursor: pointer;
+    }
+
+    .checkout-btn:hover:not(:disabled) {
+      background: var(--purple-dark);
+    }
+
+    .checkout-btn:disabled {
+      opacity: .45;
+
+      cursor: not-allowed;
+    }
+
+    .empty-cart {
+      text-align: center;
+
+      color: var(--muted);
+
+      padding: 60px 10px;
+
+      font-size: 14px;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 900px) {
+
+      nav {
+        display: none;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      .hero-text {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-note {
+        justify-content: center;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+
+    @media (max-width: 720px) {
+
+      .support-grid,
+      .value-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 60px;
+      }
+
+      .hero-art {
+        min-height: 320px;
+      }
+
+      .section {
+        padding: 65px 0;
+      }
+
+      .cta {
+        padding: 38px 28px;
+      }
+
+    }
+
+
+    @media (max-width: 540px) {
+
+      .nav {
+        height: 70px;
+      }
+
+      .nav-btn {
+        display: none;
+      }
+
+      .logo {
+        font-size: 1.15rem;
+      }
+
+      .logo-mark {
+        width: 36px;
+        height: 36px;
+      }
+
+      .hero {
+        padding: 55px 15px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+
+        letter-spacing: -1.2px;
+      }
+
+      .hero-text {
+        font-size: 15px;
+      }
+
+      .hero-art {
+        min-height: 280px;
+      }
+
+      .homework-art {
+        transform: scale(.82);
+      }
+
+      .support-card {
+        padding: 27px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+
+        gap: 7px;
+
+        text-align: center;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header>
+
+  <div class="container nav">
+
+    <a class="logo" href="index.html#home">
+
+      <span class="logo-mark">
+
+        <svg viewBox="0 0 32 32" fill="none">
+
+          <path
+            d="M16 27V13"
+            stroke="white"
+            stroke-width="2.4"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="M16 16C11 16 7.5 13.4 7.5 9.5C11.8 9.3 15.2 11.4 16 16Z"
+            stroke="white"
+            stroke-width="2.1"
+            stroke-linejoin="round"
+          />
+
+          <path
+            d="M16 12C16.8 7.2 20.2 4.8 24.5 5C24.5 9.2 21.2 12.3 16 12Z"
+            stroke="white"
+            stroke-width="2.1"
+            stroke-linejoin="round"
+          />
+
+        </svg>
+
+      </span>
+
+      NextSprout
+
+    </a>
+
+
+    <nav>
+
+      <a href="index.html#home">Home</a>
+
+      <a href="index.html#about">About</a>
+
+      <a href="index.html#programs">Programs</a>
+
+      <a href="index.html#ebooks">E-books</a>
+      <a href="computer.html">Computer Skills</a>
+
+    </nav>
+
+
+    <div class="nav-actions">
+
+      <a
+        class="nav-btn"
+        href="index.html#programs"
+      >
+        Explore Programs
+      </a>
+
+      <button
+        class="cart-button"
+        onclick="openCart()"
+      >
+        Cart
+
+        <span
+          class="cart-count"
+          id="cartCount"
+        >0</span>
+
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+
+    <div class="hero-content">
+
+      <div class="kicker">
+        SUPPORT WHEN YOU NEED IT
+      </div>
+
+      <h1>
+        Homework feels easier
+        with the <span>right support.</span>
+      </h1>
+
+      <p class="hero-text">
+        Get help understanding lessons, solving doubts and
+        completing schoolwork — with guidance that helps
+        learners understand instead of simply giving answers.
+      </p>
+
+      <div class="hero-note">
+
+        <span class="hero-note-dot"></span>
+
+        Understand the concept. Complete the work. Build confidence.
+
+      </div>
+
+    </div>
+
+
+
+    <!-- HERO ILLUSTRATION -->
+
+    <div class="hero-art">
+
+      <div class="floating-card one">
+        Understand
+      </div>
+
+      <div class="floating-card two">
+        Solve & Learn
+      </div>
+
+
+      <div class="homework-art">
+
+        <div class="notebook">
+
+          <div class="notebook-line one"></div>
+          <div class="notebook-line two"></div>
+          <div class="notebook-line three"></div>
+          <div class="notebook-line four"></div>
+
+        </div>
+
+
+        <div class="pencil"></div>
+
+
+        <div class="check-card">
+
+          <svg viewBox="0 0 48 48" fill="none">
+
+            <path
+              d="M10 25L20 35L39 14"
+              stroke="#5425A8"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+
+          </svg>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SUPPORT OPTIONS
+========================================================= -->
+
+<section class="section support-section">
+
+  <div class="section-head">
+
+    <div class="section-kicker">
+      CHOOSE YOUR SUPPORT
+    </div>
+
+    <h2>
+      Help for the moment you need it.
+    </h2>
+
+    <p>
+      Choose quick text-based help or personal guidance
+      through a live video session.
+    </p>
+
+  </div>
+
+
+  <div class="support-grid">
+
+
+    <!-- CHAT SUPPORT -->
+
+    <div class="support-card chat">
+
+      <div class="support-icon">
+
+        <svg viewBox="0 0 48 48" fill="none">
+
+          <path
+            d="M10 11H38V31H23L16 37V31H10V11Z"
+            stroke="#5425A8"
+            stroke-width="2.3"
+            stroke-linejoin="round"
+          />
+
+          <path
+            d="M17 18H31"
+            stroke="#207E88"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="M17 24H27"
+            stroke="#207E88"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+
+        </svg>
+
+      </div>
+
+
+      <span class="program-tag">
+        QUICK HELP
+      </span>
+
+
+      <h3>
+        Chat Support
+      </h3>
+
+
+      <p class="program-description">
+        Get help with homework questions, doubts and schoolwork
+        through text-based support.
+      </p>
+
+
+      <ul class="features">
+
+        <li>30-minute support session</li>
+
+        <li>Homework doubts</li>
+
+        <li>Concept clarification</li>
+
+        <li>Step-by-step guidance</li>
+
+        <li>Text-based support</li>
+
+      </ul>
+
+
+      <div class="price">
+        ₹49
+        <span>/ 30 minutes</span>
+      </div>
+
+
+      <button
+        class="buy-btn"
+        onclick="addToCart('program-homework-chat')"
+      >
+        Add to Cart
+      </button>
+
+    </div>
+
+
+
+    <!-- VIDEO CALL SUPPORT -->
+
+    <div class="support-card video">
+
+      <div class="support-icon">
+
+        <svg viewBox="0 0 48 48" fill="none">
+
+          <rect
+            x="8"
+            y="12"
+            width="25"
+            height="24"
+            rx="5"
+            stroke="#5425A8"
+            stroke-width="2.3"
+          />
+
+          <path
+            d="M33 20L40 16V32L33 28V20Z"
+            stroke="#207E88"
+            stroke-width="2.3"
+            stroke-linejoin="round"
+          />
+
+          <circle
+            cx="20"
+            cy="24"
+            r="5"
+            stroke="#5425A8"
+            stroke-width="2"
+          />
+
+        </svg>
+
+      </div>
+
+
+      <span class="program-tag">
+        PERSONAL SUPPORT
+      </span>
+
+
+      <h3>
+        Video Call Support
+      </h3>
+
+
+      <p class="program-description">
+        Get personal, face-to-face guidance through a live
+        video call for better understanding.
+      </p>
+
+
+      <ul class="features">
+
+        <li>30-minute video call</li>
+
+        <li>Homework and study doubts</li>
+
+        <li>Concept explanation</li>
+
+        <li>Step-by-step guidance</li>
+
+        <li>Interactive support</li>
+
+      </ul>
+
+
+      <div class="price">
+        ₹149
+        <span>/ 30 minutes</span>
+      </div>
+
+
+      <button
+        class="buy-btn"
+        onclick="addToCart('program-homework-video')"
+      >
+        Add to Cart
+      </button>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     HOW IT WORKS
+========================================================= -->
+
+<section class="section how-section">
+
+  <div class="section-head">
+
+    <div class="section-kicker">
+      HOW IT WORKS
+    </div>
+
+    <h2>
+      Simple support. No complicated process.
+    </h2>
+
+    <p>
+      Get the help you need in just a few simple steps.
+    </p>
+
+  </div>
+
+
+  <div class="steps">
+
+
+    <div class="step">
+
+      <div class="step-number">
+        01
+      </div>
+
+      <h3>
+        Choose your support
+      </h3>
+
+      <p>
+        Select Chat Support for quick doubts or Video Call
+        Support when you need personal explanation.
+      </p>
+
+    </div>
+
+
+
+    <div class="step">
+
+      <div class="step-number">
+        02
+      </div>
+
+      <h3>
+        Complete your booking
+      </h3>
+
+      <p>
+        Add the support option to your cart and proceed
+        through the payment process.
+      </p>
+
+    </div>
+
+
+
+    <div class="step">
+
+      <div class="step-number">
+        03
+      </div>
+
+      <h3>
+        Get the guidance
+      </h3>
+
+      <p>
+        Connect for your session and work through the
+        questions or concepts with guidance.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     VALUE SECTION
+========================================================= -->
+
+<section class="section">
+
+  <div class="section-head">
+
+    <div class="section-kicker">
+      OUR APPROACH
+    </div>
+
+    <h2>
+      Homework support is about understanding.
+    </h2>
+
+    <p>
+      The goal is not simply to finish homework. It is to
+      help learners become more confident with what they study.
+    </p>
+
+  </div>
+
+
+  <div class="value-grid">
+
+
+    <div class="value-card">
+
+      <h3>
+        Understand the concept
+      </h3>
+
+      <p>
+        We focus on explaining the idea behind a question
+        so the learner can understand what they are doing.
+      </p>
+
+    </div>
+
+
+
+    <div class="value-card">
+
+      <h3>
+        Work through the doubt
+      </h3>
+
+      <p>
+        Learners can ask questions and receive step-by-step
+        guidance rather than being left confused.
+      </p>
+
+    </div>
+
+
+
+    <div class="value-card">
+
+      <h3>
+        Build independent learning
+      </h3>
+
+      <p>
+        Support should gradually help children become more
+        comfortable solving similar questions themselves.
+      </p>
+
+    </div>
+
+
+
+    <div class="value-card">
+
+      <h3>
+        Make study less stressful
+      </h3>
+
+      <p>
+        When a learner knows where to get help, homework
+        can become a more manageable part of the school routine.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="cta-section">
+
+  <div class="cta">
+
+    <div class="cta-content">
+
+      <div class="kicker">
+        NEED SOME HELP?
+      </div>
+
+      <h2>
+        Don't let one difficult question stop the learning.
+      </h2>
+
+      <p>
+        Choose the type of support that works for you and
+        get guidance when you need it.
+      </p>
+
+      <a
+        href="#"
+        class="cta-button"
+        onclick="document.querySelector('.support-section').scrollIntoView({behavior:'smooth'}); return false;"
+      >
+        Choose Support
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+  <div class="container footer-inner">
+
+    <div class="footer-brand">
+      NextSprout
+    </div>
+
+    <p>
+      Learn. Grow. Become.
+    </p>
+
+  </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     CART
+========================================================= -->
+
+<div
+  class="cart-overlay"
+  id="cartOverlay"
+  onclick="closeCart()"
+></div>
+
+
+<div
+  class="cart-drawer"
+  id="cartDrawer"
+>
+
+  <div class="cart-header">
+
+    <h2>
+      Your Cart
+    </h2>
+
+    <button
+      class="close-cart"
+      onclick="closeCart()"
+    >
+      ×
+    </button>
+
+  </div>
+
+
+  <div
+    class="cart-items"
+    id="cartItems"
+  ></div>
+
+
+  <div class="cart-footer">
+
+    <div class="cart-total">
+
+      <div id="cartTotal">
+        ₹0
+      </div>
+
+    </div>
+
+
+    <button
+      class="checkout-btn"
+      id="checkoutButton"
+      onclick="proceedToCheckout()"
+      disabled
+    >
+      Proceed to Payment
+    </button>
+
+  </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="cart.js"></script>
+
+
+</body>
+</html>

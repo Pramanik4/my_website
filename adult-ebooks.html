@@ -1,0 +1,2426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Adult E-books | NextSprout</title>
+
+  <!-- ================= GOOGLE FONT ================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    /* =========================================================
+       NEXTSPROUT DESIGN SYSTEM
+    ========================================================= */
+
+    :root {
+      --purple: #5425A8;
+      --purple-dark: #3F1888;
+      --purple-light: #F1EAFF;
+
+      --teal: #8EDFE5;
+      --teal-dark: #207E88;
+      --teal-light: #E9FBFC;
+
+      --yellow: #FFE59A;
+      --yellow-light: #FFF7D8;
+
+      --cream: #FFFDF7;
+
+      --ink: #33204F;
+      --text: #443A50;
+      --muted: #756B80;
+
+      --white: #FFFFFF;
+      --line: #EAE4F0;
+
+      --green: #4FA96D;
+
+      --shadow:
+        0 18px 45px rgba(63, 24, 136, .08);
+
+      --shadow-hover:
+        0 24px 55px rgba(63, 24, 136, .14);
+    }
+
+
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    button,
+    a {
+      font-family: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+
+      background: rgba(255, 253, 247, .96);
+      backdrop-filter: blur(12px);
+
+      border-bottom: 1px solid rgba(234, 228, 240, .85);
+    }
+
+    .nav {
+      min-height: 76px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+
+    /* LOGO */
+
+    .logo {
+      display: flex;
+      align-items: center;
+
+      gap: 10px;
+
+      text-decoration: none;
+
+      color: var(--ink);
+
+      font-size: 1.35rem;
+      font-weight: 800;
+
+      white-space: nowrap;
+    }
+
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+
+      border-radius: 14px 14px 14px 6px;
+
+      background: var(--purple);
+
+      display: grid;
+      place-items: center;
+
+      transform: rotate(-3deg);
+
+      box-shadow:
+        0 7px 18px rgba(84, 37, 168, .18);
+    }
+
+    .logo-mark svg {
+      width: 23px;
+      height: 23px;
+    }
+
+
+    /* NAVIGATION */
+
+    nav {
+      display: flex;
+      align-items: center;
+
+      gap: 27px;
+
+      color: var(--muted);
+
+      font-size: .92rem;
+      font-weight: 600;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: inherit;
+
+      transition: .2s ease;
+    }
+
+    nav a:hover {
+      color: var(--purple);
+    }
+
+
+    /* NAV ACTIONS */
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+
+      gap: 10px;
+    }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 11px 18px;
+
+      border-radius: 999px;
+
+      background: var(--purple);
+      color: white;
+
+      text-decoration: none;
+
+      font-size: .88rem;
+      font-weight: 700;
+
+      transition: .2s ease;
+    }
+
+    .nav-btn:hover {
+      background: var(--purple-dark);
+      transform: translateY(-1px);
+    }
+
+
+    /* CART BUTTON */
+
+    .cart-button {
+      display: inline-flex;
+      align-items: center;
+
+      border: 1px solid var(--line);
+
+      background: var(--white);
+
+      padding: 9px 13px;
+
+      border-radius: 999px;
+
+      color: var(--ink);
+
+      font-size: .88rem;
+      font-weight: 700;
+
+      transition: .2s ease;
+    }
+
+    .cart-button:hover {
+      border-color: #D7C8ED;
+      background: var(--purple-light);
+    }
+
+    .cart-count {
+      display: inline-grid;
+      place-items: center;
+
+      min-width: 22px;
+      height: 22px;
+
+      padding: 0 5px;
+
+      margin-left: 5px;
+
+      border-radius: 50%;
+
+      background: var(--purple);
+
+      color: white;
+
+      font-size: .7rem;
+      font-weight: 800;
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      width: min(1120px, 92%);
+
+      margin: auto;
+
+      padding: 82px 0 65px;
+
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+
+      align-items: center;
+
+      gap: 65px;
+    }
+
+
+    /* HERO CONTENT */
+
+    .hero-content {
+      max-width: 650px;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+
+      background: var(--yellow-light);
+
+      color: #765B00;
+
+      padding: 7px 13px;
+
+      border-radius: 999px;
+
+      font-size: .76rem;
+      font-weight: 800;
+
+      letter-spacing: .4px;
+
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 5vw, 64px);
+
+      line-height: 1.08;
+
+      letter-spacing: -1.8px;
+
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--purple);
+    }
+
+    .hero-intro {
+      max-width: 620px;
+
+      color: var(--muted);
+
+      font-size: 17px;
+
+      line-height: 1.8;
+    }
+
+
+    /* HERO ART */
+
+    .hero-art {
+      min-height: 330px;
+
+      border-radius: 34px;
+
+      background: var(--purple-light);
+
+      display: grid;
+      place-items: center;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .hero-art::before {
+      content: "";
+
+      position: absolute;
+
+      width: 180px;
+      height: 180px;
+
+      border-radius: 50%;
+
+      background: var(--yellow);
+
+      top: -65px;
+      right: -55px;
+
+      opacity: .75;
+    }
+
+    .hero-art::after {
+      content: "";
+
+      position: absolute;
+
+      width: 130px;
+      height: 130px;
+
+      border-radius: 50%;
+
+      background: var(--teal);
+
+      bottom: -60px;
+      left: -35px;
+
+      opacity: .65;
+    }
+
+    .hero-art svg {
+      width: min(270px, 70%);
+
+      height: auto;
+
+      position: relative;
+      z-index: 2;
+    }
+
+
+    /* =========================================================
+       E-BOOK SECTION
+    ========================================================= */
+
+    .ebooks-section {
+      background: var(--white);
+
+      padding: 82px 0 90px;
+
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-heading {
+      text-align: center;
+
+      max-width: 720px;
+
+      margin: 0 auto 42px;
+    }
+
+    .section-kicker {
+      color: var(--purple);
+
+      font-size: .74rem;
+
+      font-weight: 800;
+
+      letter-spacing: 1.4px;
+
+      margin-bottom: 10px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(30px, 4vw, 43px);
+
+      line-height: 1.15;
+
+      margin-bottom: 12px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+
+      font-size: 15px;
+    }
+
+
+    /* =========================================================
+       EBOOK GRID
+    ========================================================= */
+
+    .ebook-grid {
+      width: min(1080px, 92%);
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 26px;
+    }
+
+
+    /* EBOOK CARD */
+
+    .ebook-card {
+      position: relative;
+
+      background: var(--cream);
+
+      border: 1px solid var(--line);
+
+      border-radius: 28px;
+
+      padding: 20px;
+
+      box-shadow: var(--shadow);
+
+      overflow: hidden;
+
+      transition: .25s ease;
+    }
+
+    .ebook-card:hover {
+      transform: translateY(-5px);
+
+      box-shadow: var(--shadow-hover);
+    }
+
+
+    /* DECORATIVE TOP BAR */
+
+    .ebook-card::before {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      top: 0;
+
+      height: 6px;
+
+      background: var(--purple);
+    }
+
+    .ebook-card.teal-card::before {
+      background: var(--teal);
+    }
+
+
+    /* COVER */
+
+    .ebook-cover {
+      min-height: 240px;
+
+      border-radius: 22px;
+
+      background: var(--purple-light);
+
+      display: grid;
+      place-items: center;
+
+      margin-bottom: 24px;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .teal-card .ebook-cover {
+      background: var(--teal-light);
+    }
+
+    .ebook-cover::before {
+      content: "";
+
+      position: absolute;
+
+      width: 150px;
+      height: 150px;
+
+      border-radius: 50%;
+
+      background: var(--yellow);
+
+      top: -65px;
+      right: -45px;
+
+      opacity: .75;
+    }
+
+    .teal-card .ebook-cover::before {
+      background: var(--purple-light);
+    }
+
+    .ebook-cover svg {
+      width: 170px;
+      height: 170px;
+
+      position: relative;
+      z-index: 2;
+    }
+
+
+    /* BOOK LABEL */
+
+    .ebook-category {
+      display: inline-flex;
+
+      padding: 6px 11px;
+
+      border-radius: 999px;
+
+      background: var(--purple-light);
+
+      color: var(--purple);
+
+      font-size: .7rem;
+
+      font-weight: 800;
+
+      letter-spacing: .7px;
+
+      margin-bottom: 12px;
+    }
+
+    .teal-card .ebook-category {
+      background: var(--teal-light);
+
+      color: var(--teal-dark);
+    }
+
+
+    /* BOOK CONTENT */
+
+    .ebook-card h2 {
+      font-size: 25px;
+
+      line-height: 1.25;
+
+      margin-bottom: 10px;
+    }
+
+    .ebook-card > p {
+      color: var(--muted);
+
+      font-size: 14px;
+
+      line-height: 1.75;
+
+      margin-bottom: 18px;
+    }
+
+
+    /* META */
+
+    .ebook-meta {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-bottom: 20px;
+    }
+
+    .meta-pill {
+      background: var(--white);
+
+      border: 1px solid var(--line);
+
+      color: var(--muted);
+
+      padding: 6px 10px;
+
+      border-radius: 999px;
+
+      font-size: .72rem;
+
+      font-weight: 600;
+    }
+
+
+    /* PRICE */
+
+    .ebook-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 15px;
+
+      padding-top: 18px;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .ebook-price {
+      font-size: 28px;
+
+      font-weight: 800;
+
+      color: var(--ink);
+    }
+
+    .ebook-price small {
+      display: block;
+
+      color: var(--muted);
+
+      font-size: .7rem;
+
+      font-weight: 500;
+    }
+
+
+    /* BUY BUTTON */
+
+    .buy-btn {
+      border: none;
+
+      background: var(--purple);
+
+      color: white;
+
+      padding: 12px 19px;
+
+      border-radius: 999px;
+
+      font-size: .85rem;
+
+      font-weight: 800;
+
+      white-space: nowrap;
+
+      transition: .2s ease;
+    }
+
+    .buy-btn:hover {
+      background: var(--purple-dark);
+
+      transform: translateY(-1px);
+    }
+
+    .teal-card .buy-btn {
+      background: var(--teal-dark);
+    }
+
+    .teal-card .buy-btn:hover {
+      background: #176B73;
+    }
+
+
+    /* =========================================================
+       VALUE SECTION
+    ========================================================= */
+
+    .value-section {
+      background: var(--teal-light);
+
+      padding: 85px 0;
+    }
+
+    .value-wrapper {
+      width: min(1080px, 92%);
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns: .85fr 1.15fr;
+
+      gap: 60px;
+
+      align-items: center;
+    }
+
+    .value-content h2 {
+      font-size: clamp(30px, 4vw, 42px);
+
+      line-height: 1.2;
+
+      margin-bottom: 16px;
+    }
+
+    .value-content h2 span {
+      color: var(--purple);
+    }
+
+    .value-content p {
+      color: var(--muted);
+
+      font-size: 15px;
+
+      line-height: 1.8;
+    }
+
+
+    /* VALUE CARDS */
+
+    .value-list {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 15px;
+    }
+
+    .value-card {
+      background: var(--white);
+
+      border: 1px solid var(--line);
+
+      border-radius: 20px;
+
+      padding: 23px;
+
+      box-shadow:
+        0 10px 30px rgba(63, 24, 136, .05);
+    }
+
+    .value-icon {
+      width: 43px;
+      height: 43px;
+
+      border-radius: 13px;
+
+      background: var(--purple-light);
+
+      display: grid;
+      place-items: center;
+
+      margin-bottom: 15px;
+    }
+
+    .value-icon svg {
+      width: 23px;
+      height: 23px;
+    }
+
+    .value-card:nth-child(2) .value-icon {
+      background: var(--yellow-light);
+    }
+
+    .value-card:nth-child(3) .value-icon {
+      background: var(--teal-light);
+    }
+
+    .value-card:nth-child(4) .value-icon {
+      background: var(--purple-light);
+    }
+
+    .value-card h3 {
+      font-size: 16px;
+
+      margin-bottom: 5px;
+    }
+
+    .value-card p {
+      color: var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.6;
+    }
+
+
+    /* =========================================================
+       PARENT / LEARNER CTA
+    ========================================================= */
+
+    .cta-section {
+      padding: 80px 0;
+      background: var(--cream);
+    }
+
+    .cta {
+      width: min(1050px, 92%);
+
+      margin: auto;
+
+      background: var(--purple);
+
+      border-radius: 30px;
+
+      padding: 48px 55px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .cta::after {
+      content: "";
+
+      position: absolute;
+
+      width: 180px;
+      height: 180px;
+
+      border-radius: 50%;
+
+      background: var(--teal);
+
+      opacity: .18;
+
+      right: -55px;
+      top: -70px;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-kicker {
+      display: inline-block;
+
+      background: var(--yellow);
+
+      color: #5F4900;
+
+      padding: 6px 11px;
+
+      border-radius: 999px;
+
+      font-size: .7rem;
+
+      font-weight: 800;
+
+      letter-spacing: .7px;
+
+      margin-bottom: 12px;
+    }
+
+    .cta h2 {
+      color: white;
+
+      font-size: clamp(27px, 4vw, 38px);
+
+      line-height: 1.2;
+
+      margin-bottom: 8px;
+    }
+
+    .cta p {
+      color: rgba(255,255,255,.78);
+
+      font-size: 14px;
+
+      max-width: 620px;
+    }
+
+    .cta-button {
+      position: relative;
+      z-index: 2;
+
+      background: var(--yellow);
+
+      color: var(--ink);
+
+      padding: 13px 20px;
+
+      border-radius: 999px;
+
+      text-decoration: none;
+
+      font-size: .85rem;
+
+      font-weight: 800;
+
+      white-space: nowrap;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      background: var(--white);
+
+      border-top: 1px solid var(--line);
+
+      padding: 28px 0;
+    }
+
+    .footer-inner {
+      width: min(1120px, 92%);
+
+      margin: auto;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      gap: 20px;
+    }
+
+    .footer-logo {
+      color: var(--ink);
+
+      font-size: 1rem;
+
+      font-weight: 800;
+    }
+
+    .footer-text {
+      color: var(--muted);
+
+      font-size: .78rem;
+    }
+
+
+    /* =========================================================
+       CART OVERLAY
+    ========================================================= */
+
+    .cart-overlay {
+      position: fixed;
+
+      inset: 0;
+
+      background: rgba(32, 20, 50, .38);
+
+      z-index: 100;
+
+      display: none;
+
+      backdrop-filter: blur(3px);
+    }
+
+    .cart-overlay.active {
+      display: block;
+    }
+
+
+    /* =========================================================
+       CART DRAWER
+    ========================================================= */
+
+    .cart-drawer {
+      position: fixed;
+
+      right: 0;
+      top: 0;
+
+      height: 100vh;
+
+      width: min(430px, 92%);
+
+      background: white;
+
+      z-index: 101;
+
+      padding: 25px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      box-shadow:
+        -15px 0 45px rgba(33, 20, 50, .15);
+
+      transform: translateX(100%);
+
+      transition: .3s ease;
+    }
+
+    .cart-drawer.active {
+      transform: translateX(0);
+    }
+
+
+    /* CART HEADER */
+
+    .cart-header {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      padding-bottom: 20px;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .cart-header h2 {
+      font-size: 23px;
+    }
+
+    .close-cart {
+      border: none;
+
+      background: var(--purple-light);
+
+      color: var(--purple);
+
+      width: 37px;
+      height: 37px;
+
+      border-radius: 50%;
+
+      cursor: pointer;
+
+      font-size: 19px;
+
+      font-weight: 600;
+    }
+
+
+    /* CART ITEMS */
+
+    .cart-items {
+      flex: 1;
+
+      overflow-y: auto;
+
+      padding: 20px 0;
+    }
+
+    .cart-item {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 15px;
+
+      padding: 17px 0;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .cart-item-info {
+      min-width: 0;
+    }
+
+    .cart-item-name {
+      color: var(--ink);
+
+      font-size: 15px;
+
+      line-height: 1.4;
+
+      font-weight: 700;
+
+      margin-bottom: 4px;
+    }
+
+    .cart-item-meta {
+      color: var(--muted);
+
+      font-size: 13px;
+    }
+
+    .cart-remove {
+      border: none;
+
+      background: none;
+
+      color: #C25C5C;
+
+      cursor: pointer;
+
+      font-family: inherit;
+
+      font-size: 12px;
+
+      margin-top: 6px;
+
+      padding: 0;
+    }
+
+    .cart-remove:hover {
+      text-decoration: underline;
+    }
+
+    .cart-item-right {
+      text-align: right;
+
+      flex-shrink: 0;
+    }
+
+    .cart-item-right strong {
+      display: block;
+
+      color: var(--ink);
+
+      font-size: 15px;
+
+      white-space: nowrap;
+
+      margin-bottom: 4px;
+    }
+
+
+    /* EMPTY CART */
+
+    .empty-cart {
+      text-align: center;
+
+      color: var(--muted);
+
+      padding: 70px 10px;
+    }
+
+    .empty-cart-icon {
+      width: 55px;
+      height: 55px;
+
+      margin: 0 auto 15px;
+
+      border-radius: 18px;
+
+      background: var(--purple-light);
+
+      display: grid;
+      place-items: center;
+    }
+
+
+    /* CART FOOTER */
+
+    .cart-footer {
+      border-top: 1px solid var(--line);
+
+      padding-top: 20px;
+    }
+
+    .cart-total {
+      margin-bottom: 15px;
+    }
+
+    .cart-total-row {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      color: var(--ink);
+
+      font-size: 15px;
+
+      font-weight: 800;
+
+      margin-bottom: 6px;
+    }
+
+    .checkout-btn {
+      width: 100%;
+
+      padding: 15px;
+
+      border: none;
+
+      border-radius: 14px;
+
+      background: var(--purple);
+
+      color: white;
+
+      font-size: 15px;
+
+      font-weight: 800;
+
+      cursor: pointer;
+    }
+
+    .checkout-btn:hover:not(:disabled) {
+      background: var(--purple-dark);
+    }
+
+    .checkout-btn:disabled {
+      opacity: .45;
+
+      cursor: not-allowed;
+    }
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 900px) {
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+
+        padding-top: 65px;
+
+        gap: 40px;
+      }
+
+      .hero-content {
+        text-align: center;
+
+        margin: auto;
+      }
+
+      .hero-intro {
+        margin: auto;
+      }
+
+      .hero-art {
+        min-height: 280px;
+      }
+
+      .value-wrapper {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+      }
+
+      .value-content {
+        text-align: center;
+      }
+
+    }
+
+
+    @media (max-width: 720px) {
+
+      .ebook-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .value-list {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .cta {
+        padding: 38px 28px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+
+        text-align: center;
+      }
+
+    }
+
+
+    @media (max-width: 540px) {
+
+      .nav {
+        min-height: 68px;
+      }
+
+      .nav-btn {
+        display: none;
+      }
+
+      .hero {
+        padding: 60px 0 55px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+
+        letter-spacing: -1px;
+      }
+
+      .hero-intro {
+        font-size: 15px;
+      }
+
+      .hero-art {
+        min-height: 240px;
+
+        border-radius: 26px;
+      }
+
+      .ebooks-section {
+        padding: 65px 0 70px;
+      }
+
+      .ebook-card {
+        padding: 16px;
+
+        border-radius: 23px;
+      }
+
+      .ebook-cover {
+        min-height: 210px;
+
+        border-radius: 18px;
+      }
+
+      .ebook-bottom {
+        align-items: flex-start;
+
+        flex-direction: column;
+      }
+
+      .buy-btn {
+        width: 100%;
+      }
+
+      .value-section {
+        padding: 65px 0;
+      }
+
+      .value-list {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-section {
+        padding: 65px 0;
+      }
+
+      .cta {
+        border-radius: 24px;
+
+        padding: 32px 23px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header>
+
+  <div class="container nav">
+
+    <!-- LOGO -->
+    <a class="logo" href="index.html#home">
+
+      <span class="logo-mark">
+
+        <svg
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16 27V13"
+            stroke="white"
+            stroke-width="2.5"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="M16 17C12 17 8.5 14.5 8.5 10"
+            stroke="white"
+            stroke-width="2.5"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="M16 14C20 14 23.5 11.5 23.5 7"
+            stroke="white"
+            stroke-width="2.5"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="M16 9C14 6.5 11.5 5.5 9 6"
+            stroke="white"
+            stroke-width="2.5"
+            stroke-linecap="round"
+          />
+
+        </svg>
+
+      </span>
+
+      NextSprout
+
+    </a>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+      <a href="index.html#home">Home</a>
+
+      <a href="index.html#about">About</a>
+
+      <a href="index.html#programs">Programs</a>
+
+      <a href="index.html#ebooks">E-books</a>
+      <a href="computer.html">Computer Skills</a>
+
+    </nav>
+
+
+    <!-- ACTIONS -->
+
+    <div class="nav-actions">
+
+      <a
+        class="nav-btn"
+        href="index.html#programs"
+      >
+        Explore Programs
+      </a>
+
+      <button
+        class="cart-button"
+        onclick="openCart()"
+        aria-label="Open shopping cart"
+      >
+
+        Cart
+
+        <span
+          class="cart-count"
+          id="cartCount"
+        >
+          0
+        </span>
+
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+
+  <div class="hero-content">
+
+    <div class="hero-kicker">
+      PRACTICAL LEARNING FOR ADULTS
+    </div>
+
+
+    <h1>
+      Learn skills you can
+      <span>use every day.</span>
+    </h1>
+
+
+    <p class="hero-intro">
+      Practical e-books created to help adults communicate
+      confidently, improve workplace English, and handle
+      real-life conversations with greater ease.
+    </p>
+
+  </div>
+
+
+
+  <!-- HERO ILLUSTRATION -->
+
+  <div class="hero-art">
+
+    <svg
+      viewBox="0 0 320 260"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+
+      <!-- BOOK -->
+
+      <path
+        d="M70 67
+           C105 52 137 55 160 72
+           V207
+           C132 191 101 188 70 201
+           Z"
+        fill="white"
+        stroke="#5425A8"
+        stroke-width="4"
+      />
+
+      <path
+        d="M160 72
+           C183 55 215 52 250 67
+           V201
+           C219 188 188 191 160 207
+           Z"
+        fill="white"
+        stroke="#5425A8"
+        stroke-width="4"
+      />
+
+      <path
+        d="M160 72V207"
+        stroke="#5425A8"
+        stroke-width="4"
+        stroke-linecap="round"
+      />
+
+
+      <!-- LEFT PAGE LINES -->
+
+      <path
+        d="M92 92H137"
+        stroke="#8EDFE5"
+        stroke-width="5"
+        stroke-linecap="round"
+      />
+
+      <path
+        d="M92 111H137"
+        stroke="#D9D0EA"
+        stroke-width="5"
+        stroke-linecap="round"
+      />
+
+      <path
+        d="M92 130H137"
+        stroke="#D9D0EA"
+        stroke-width="5"
+        stroke-linecap="round"
+      />
+
+      <path
+        d="M92 149H125"
+        stroke="#D9D0EA"
+        stroke-width="5"
+        stroke-linecap="round"
+      />
+
+
+      <!-- RIGHT PAGE LINES -->
+
+      <path
+        d="M183 92H228"
+        stroke="#8EDFE5"
+        stroke-width="5"
+        stroke-linecap="round"
+      />
+
+      <path
+        d="M183 111H228"
+        stroke="#D9D0EA"
+        stroke-width="5"
+        stroke-linecap="round"
+      />
+
+      <path
+        d="M183 130H228"
+        stroke="#D9D0EA"
+        stroke-width="5"
+        stroke-linecap="round"
+      />
+
+      <path
+        d="M183 149H215"
+        stroke="#D9D0EA"
+        stroke-width="5"
+        stroke-linecap="round"
+      />
+
+
+      <!-- PEN -->
+
+      <path
+        d="M218 177L251 144"
+        stroke="#5425A8"
+        stroke-width="9"
+        stroke-linecap="round"
+      />
+
+      <path
+        d="M215 180L218 169"
+        stroke="#5425A8"
+        stroke-width="4"
+        stroke-linecap="round"
+      />
+
+
+      <!-- SMALL SPARKS -->
+
+      <path
+        d="M60 55V43"
+        stroke="#207E88"
+        stroke-width="4"
+        stroke-linecap="round"
+      />
+
+      <path
+        d="M54 49H66"
+        stroke="#207E88"
+        stroke-width="4"
+        stroke-linecap="round"
+      />
+
+      <path
+        d="M260 102V91"
+        stroke="#5425A8"
+        stroke-width="4"
+        stroke-linecap="round"
+      />
+
+      <path
+        d="M254 96H266"
+        stroke="#5425A8"
+        stroke-width="4"
+        stroke-linecap="round"
+      />
+
+    </svg>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     E-BOOKS
+========================================================= -->
+
+<section class="ebooks-section">
+
+
+  <div class="section-heading">
+
+    <div class="section-kicker">
+      ADULT E-BOOK COLLECTION
+    </div>
+
+    <h2>
+      Practical books for
+      <span style="color:var(--purple);">
+        real situations.
+      </span>
+    </h2>
+
+    <p>
+      Simple, useful and ready-to-apply learning resources
+      designed around everyday communication.
+    </p>
+
+  </div>
+
+
+
+  <div class="ebook-grid">
+
+
+    <!-- =====================================================
+         EBOOK 1
+    ====================================================== -->
+
+    <article class="ebook-card">
+
+
+      <div class="ebook-cover">
+
+        <svg
+          viewBox="0 0 200 200"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+
+          <!-- BOOK -->
+
+          <rect
+            x="53"
+            y="30"
+            width="94"
+            height="135"
+            rx="9"
+            fill="white"
+            stroke="#5425A8"
+            stroke-width="4"
+          />
+
+          <path
+            d="M72 57H128"
+            stroke="#5425A8"
+            stroke-width="6"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="M72 78H128"
+            stroke="#8EDFE5"
+            stroke-width="6"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="M72 99H116"
+            stroke="#D9D0EA"
+            stroke-width="6"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="M72 120H124"
+            stroke="#D9D0EA"
+            stroke-width="6"
+            stroke-linecap="round"
+          />
+
+
+          <!-- SPEECH BUBBLE -->
+
+          <path
+            d="M117 142
+               C117 132 125 126 136 126
+               H158
+               C169 126 177 133 177 143
+               C177 154 169 160 158 160
+               H143
+               L134 168
+               L135 160
+               C124 158 117 153 117 142Z"
+            fill="#8EDFE5"
+            stroke="#207E88"
+            stroke-width="3"
+          />
+
+          <circle
+            cx="143"
+            cy="143"
+            r="3"
+            fill="#207E88"
+          />
+
+          <circle
+            cx="151"
+            cy="143"
+            r="3"
+            fill="#207E88"
+          />
+
+          <circle
+            cx="159"
+            cy="143"
+            r="3"
+            fill="#207E88"
+          />
+
+        </svg>
+
+      </div>
+
+
+      <div class="ebook-category">
+        ADULT E-BOOK
+      </div>
+
+
+      <h2>
+        Everyday English at Work
+      </h2>
+
+
+      <p>
+        A practical English-speaking guide for IT and corporate
+        professionals who want to communicate more clearly and
+        confidently at work. Learn useful sentences for meetings,
+        stand-ups, emails, client calls, interviews and everyday
+        workplace conversations.
+      </p>
+
+
+      <div class="ebook-meta">
+
+        <span class="meta-pill">
+          PDF
+        </span>
+
+        <span class="meta-pill">
+          40 Pages
+        </span>
+
+        <span class="meta-pill">
+          Workplace English
+        </span>
+
+      </div>
+
+
+      <div class="ebook-bottom">
+
+        <div class="ebook-price">
+          ₹29
+
+          <small>
+            One-time purchase
+          </small>
+        </div>
+
+
+        <button
+          class="buy-btn"
+          onclick="addToCart('ebook-everyday-english-work')"
+        >
+          Add to Cart
+        </button>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- =====================================================
+         SECOND BOOK — READY FOR FUTURE
+    ====================================================== -->
+
+    <article class="ebook-card teal-card">
+
+
+      <div class="ebook-cover">
+
+        <svg
+          viewBox="0 0 200 200"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+
+          <!-- NOTEBOOK -->
+
+          <rect
+            x="52"
+            y="35"
+            width="96"
+            height="130"
+            rx="10"
+            fill="white"
+            stroke="#207E88"
+            stroke-width="4"
+          />
+
+          <!-- RINGS -->
+
+          <path
+            d="M73 28V45"
+            stroke="#207E88"
+            stroke-width="5"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="M100 28V45"
+            stroke="#207E88"
+            stroke-width="5"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="M127 28V45"
+            stroke="#207E88"
+            stroke-width="5"
+            stroke-linecap="round"
+          />
+
+          <!-- LINES -->
+
+          <path
+            d="M72 70H128"
+            stroke="#8EDFE5"
+            stroke-width="6"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="M72 91H128"
+            stroke="#D4EAEC"
+            stroke-width="6"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="M72 112H118"
+            stroke="#D4EAEC"
+            stroke-width="6"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="M72 133H124"
+            stroke="#D4EAEC"
+            stroke-width="6"
+            stroke-linecap="round"
+          />
+
+          <!-- CHECK -->
+
+          <path
+            d="M82 92L88 98L99 86"
+            stroke="#5425A8"
+            stroke-width="4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+
+        </svg>
+
+      </div>
+
+
+      <div class="ebook-category">
+        COMING SOON
+      </div>
+
+
+      <h2>
+        More Practical English Guides
+      </h2>
+
+
+      <p>
+        New e-books covering everyday English, professional
+        communication, conversations and useful vocabulary
+        will be added here soon.
+      </p>
+
+
+      <div class="ebook-meta">
+
+        <span class="meta-pill">
+          Practical
+        </span>
+
+        <span class="meta-pill">
+          Easy to Use
+        </span>
+
+        <span class="meta-pill">
+          Real Situations
+        </span>
+
+      </div>
+
+
+      <div class="ebook-bottom">
+
+        <div class="ebook-price">
+          Soon
+
+          <small>
+            New resources coming
+          </small>
+        </div>
+
+
+        <button
+          class="buy-btn"
+          disabled
+          style="
+            opacity:.55;
+            cursor:not-allowed;
+          "
+        >
+          Coming Soon
+        </button>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     VALUE SECTION
+========================================================= -->
+
+<section class="value-section">
+
+
+  <div class="value-wrapper">
+
+
+    <div class="value-content">
+
+      <div class="section-kicker">
+        WHY THESE E-BOOKS?
+      </div>
+
+
+      <h2>
+        Learn something
+        <span>you can actually use.</span>
+      </h2>
+
+
+      <p>
+        Learning becomes more useful when it connects with
+        real situations. These e-books focus on practical
+        language and skills that adults can immediately
+        apply at work and in everyday conversations.
+      </p>
+
+    </div>
+
+
+
+    <div class="value-list">
+
+
+      <!-- CARD 1 -->
+
+      <div class="value-card">
+
+        <div class="value-icon">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+
+            <path
+              d="M5 5H19V19H5V5Z"
+              stroke="#5425A8"
+              stroke-width="2"
+              stroke-linejoin="round"
+            />
+
+            <path
+              d="M8 9H16"
+              stroke="#5425A8"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+
+            <path
+              d="M8 13H14"
+              stroke="#5425A8"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+
+          </svg>
+
+        </div>
+
+        <h3>
+          Ready-to-use sentences
+        </h3>
+
+        <p>
+          Learn expressions you can directly use in real conversations.
+        </p>
+
+      </div>
+
+
+
+      <!-- CARD 2 -->
+
+      <div class="value-card">
+
+        <div class="value-icon">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+
+            <circle
+              cx="12"
+              cy="12"
+              r="8"
+              stroke="#765B00"
+              stroke-width="2"
+            />
+
+            <path
+              d="M12 8V12L15 14"
+              stroke="#765B00"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+
+          </svg>
+
+        </div>
+
+        <h3>
+          Learn at your pace
+        </h3>
+
+        <p>
+          Download the PDF and learn whenever it fits your schedule.
+        </p>
+
+      </div>
+
+
+
+      <!-- CARD 3 -->
+
+      <div class="value-card">
+
+        <div class="value-icon">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+
+            <path
+              d="M4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12"
+              stroke="#207E88"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+
+            <path
+              d="M4 12L7 15"
+              stroke="#207E88"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+
+            <path
+              d="M20 12L17 15"
+              stroke="#207E88"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+
+            <path
+              d="M8 18C9.2 19.2 10.5 20 12 20"
+              stroke="#207E88"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+
+          </svg>
+
+        </div>
+
+        <h3>
+          Practical learning
+        </h3>
+
+        <p>
+          Focus on situations adults commonly face in daily life.
+        </p>
+
+      </div>
+
+
+
+      <!-- CARD 4 -->
+
+      <div class="value-card">
+
+        <div class="value-icon">
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+
+            <path
+              d="M12 3L14.5 9L21 9.5L16 13.5L17.5 20L12 16.5L6.5 20L8 13.5L3 9.5L9.5 9L12 3Z"
+              stroke="#5425A8"
+              stroke-width="1.8"
+              stroke-linejoin="round"
+            />
+
+          </svg>
+
+        </div>
+
+        <h3>
+          Build confidence
+        </h3>
+
+        <p>
+          Improve your confidence by knowing what to say and how to say it.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="cta-section">
+
+  <div class="cta">
+
+
+    <div class="cta-content">
+
+      <div class="cta-kicker">
+        KEEP LEARNING
+      </div>
+
+
+      <h2>
+        Small learning steps can create big confidence.
+      </h2>
+
+
+      <p>
+        Explore more NextSprout learning resources and
+        find something useful for your next learning goal.
+      </p>
+
+    </div>
+
+
+    <a
+      href="index.html#ebooks"
+      class="cta-button"
+    >
+      Explore E-books
+    </a>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div class="footer-logo">
+      NextSprout
+    </div>
+
+    <div class="footer-text">
+      © 2026 NextSprout. Learn. Practise. Grow.
+    </div>
+
+  </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     CART OVERLAY
+========================================================= -->
+
+<div
+  class="cart-overlay"
+  id="cartOverlay"
+  onclick="closeCart()"
+></div>
+
+
+
+<!-- =========================================================
+     CART DRAWER
+========================================================= -->
+
+<div
+  class="cart-drawer"
+  id="cartDrawer"
+>
+
+
+  <div class="cart-header">
+
+    <h2>
+      Your Cart
+    </h2>
+
+    <button
+      class="close-cart"
+      onclick="closeCart()"
+      aria-label="Close cart"
+    >
+      ×
+    </button>
+
+  </div>
+
+
+  <div
+    class="cart-items"
+    id="cartItems"
+  ></div>
+
+
+  <div class="cart-footer">
+
+    <div class="cart-total" id="cartTotal">
+      ₹0
+    </div>
+
+
+    <button
+      class="checkout-btn"
+      id="checkoutButton"
+      onclick="proceedToCheckout()"
+      disabled
+    >
+      Proceed to Payment
+    </button>
+
+  </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="cart.js"></script>
+
+
+</body>
+</html>

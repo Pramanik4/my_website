@@ -1,0 +1,2095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>English Speaking | NextSprout</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root {
+      --purple: #5425A8;
+      --purple-dark: #3F1888;
+      --purple-light: #F1EAFF;
+
+      --teal: #8EDFE5;
+      --teal-dark: #207E88;
+      --teal-light: #E9FBFC;
+
+      --yellow: #FFE59A;
+      --yellow-light: #FFF7D8;
+
+      --cream: #FFFDF7;
+
+      --ink: #33204F;
+      --text: #443A50;
+      --muted: #756B80;
+
+      --white: #FFFFFF;
+      --line: #EAE4F0;
+
+      --green: #4FA96D;
+    }
+
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+      font-family: "Poppins", sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+
+    body.cart-open {
+      overflow: hidden;
+    }
+
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(12px);
+
+      border-bottom: 1px solid rgba(234,228,240,.8);
+    }
+
+
+    .nav {
+      height: 76px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      text-decoration: none;
+
+      color: var(--ink);
+
+      font-size: 1.35rem;
+      font-weight: 800;
+
+      letter-spacing: -.5px;
+    }
+
+
+    .logo-mark {
+      width: 38px;
+      height: 38px;
+
+      border-radius: 13px 13px 13px 5px;
+
+      background: var(--purple);
+
+      display: grid;
+      place-items: center;
+
+      transform: rotate(-3deg);
+    }
+
+
+    .logo-mark svg {
+      width: 23px;
+      height: 23px;
+    }
+
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+
+      color: var(--muted);
+
+      font-size: .93rem;
+      font-weight: 600;
+    }
+
+
+    nav a {
+      color: inherit;
+      text-decoration: none;
+
+      transition: color .2s ease;
+    }
+
+
+    nav a:hover {
+      color: var(--purple);
+    }
+
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+
+      padding: 11px 19px;
+
+      border-radius: 999px;
+
+      background: var(--purple);
+
+      color: white;
+
+      text-decoration: none;
+
+      font-size: .9rem;
+      font-weight: 700;
+
+      transition: .2s ease;
+    }
+
+
+    .nav-btn:hover {
+      background: var(--purple-dark);
+      transform: translateY(-1px);
+    }
+
+
+    .cart-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+
+      border: 1px solid var(--line);
+
+      background: white;
+
+      padding: 10px 14px;
+
+      border-radius: 999px;
+
+      cursor: pointer;
+
+      color: var(--ink);
+
+      font-family: inherit;
+      font-size: .9rem;
+      font-weight: 700;
+    }
+
+
+    .cart-count {
+      display: inline-grid;
+      place-items: center;
+
+      min-width: 22px;
+      height: 22px;
+
+      padding: 0 5px;
+
+      border-radius: 50%;
+
+      background: var(--purple);
+
+      color: white;
+
+      font-size: .72rem;
+      font-weight: 700;
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .hero {
+      padding: 88px 0 65px;
+    }
+
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+
+      align-items: center;
+
+      gap: 60px;
+    }
+
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+
+      padding: 8px 14px;
+
+      border-radius: 999px;
+
+      background: var(--yellow-light);
+
+      color: #755B00;
+
+      font-size: .78rem;
+      font-weight: 800;
+
+      letter-spacing: .5px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 20px;
+    }
+
+
+    h1 {
+      color: var(--ink);
+
+      font-size: clamp(42px, 5vw, 64px);
+
+      line-height: 1.08;
+
+      letter-spacing: -2px;
+
+      margin-bottom: 20px;
+    }
+
+
+    h1 span {
+      color: var(--purple);
+    }
+
+
+    .hero-text {
+      max-width: 620px;
+
+      color: var(--muted);
+
+      font-size: 17px;
+
+      line-height: 1.8;
+
+      margin-bottom: 28px;
+    }
+
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      color: var(--ink);
+
+      font-size: .9rem;
+      font-weight: 600;
+    }
+
+
+    .hero-note-dot {
+      width: 10px;
+      height: 10px;
+
+      border-radius: 50%;
+
+      background: var(--teal-dark);
+    }
+
+
+    /* HERO ART */
+
+    .hero-art {
+      min-height: 390px;
+
+      border-radius: 34px;
+
+      background: var(--purple-light);
+
+      display: grid;
+      place-items: center;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+
+    .hero-art::before {
+      content: "";
+
+      position: absolute;
+
+      width: 180px;
+      height: 180px;
+
+      border-radius: 50%;
+
+      background: var(--yellow);
+
+      top: -60px;
+      right: -40px;
+
+      opacity: .8;
+    }
+
+
+    .hero-art::after {
+      content: "";
+
+      position: absolute;
+
+      width: 130px;
+      height: 130px;
+
+      border-radius: 50%;
+
+      background: var(--teal);
+
+      bottom: -55px;
+      left: -35px;
+
+      opacity: .75;
+    }
+
+
+    .speaking-illustration {
+      position: relative;
+      z-index: 2;
+
+      width: min(330px, 72%);
+      height: auto;
+    }
+
+
+    /* =====================================================
+       PROGRAM SECTION
+    ===================================================== */
+
+    .program-section {
+      padding: 75px 0 90px;
+
+      background: var(--white);
+    }
+
+
+    .section-heading {
+      text-align: center;
+
+      max-width: 700px;
+
+      margin: 0 auto 42px;
+    }
+
+
+    .section-heading .mini-kicker {
+      display: inline-block;
+
+      color: var(--teal-dark);
+
+      font-size: .75rem;
+      font-weight: 800;
+
+      letter-spacing: 1.4px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 10px;
+    }
+
+
+    .section-heading h2 {
+      color: var(--ink);
+
+      font-size: 38px;
+
+      line-height: 1.2;
+
+      letter-spacing: -1px;
+
+      margin-bottom: 10px;
+    }
+
+
+    .section-heading p {
+      color: var(--muted);
+
+      font-size: 16px;
+    }
+
+
+    .program-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 24px;
+    }
+
+
+    .program-card {
+      position: relative;
+
+      overflow: hidden;
+
+      background: var(--cream);
+
+      border: 1px solid var(--line);
+
+      border-radius: 28px;
+
+      padding: 34px;
+
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+    }
+
+
+    .program-card:hover {
+      transform: translateY(-5px);
+
+      box-shadow:
+        0 18px 45px rgba(63,24,136,.09);
+    }
+
+
+    .program-card.teal-card {
+      background: var(--teal-light);
+    }
+
+
+    .card-decoration {
+      position: absolute;
+
+      width: 90px;
+      height: 8px;
+
+      border-radius: 999px;
+
+      background: var(--yellow);
+
+      right: 28px;
+      top: 28px;
+
+      transform: rotate(-4deg);
+    }
+
+
+    .program-card.teal-card .card-decoration {
+      background: var(--purple);
+    }
+
+
+    .program-icon {
+      width: 58px;
+      height: 58px;
+
+      border-radius: 18px;
+
+      display: grid;
+      place-items: center;
+
+      background: var(--purple-light);
+
+      color: var(--purple);
+
+      margin-bottom: 22px;
+    }
+
+
+    .teal-card .program-icon {
+      background: white;
+
+      color: var(--teal-dark);
+    }
+
+
+    .program-icon svg {
+      width: 30px;
+      height: 30px;
+    }
+
+
+    .program-tag {
+      display: inline-flex;
+
+      padding: 7px 12px;
+
+      border-radius: 999px;
+
+      background: var(--yellow-light);
+
+      color: #755B00;
+
+      font-size: .72rem;
+
+      font-weight: 800;
+
+      letter-spacing: .4px;
+
+      margin-bottom: 15px;
+    }
+
+
+    .teal-card .program-tag {
+      background: white;
+
+      color: var(--teal-dark);
+    }
+
+
+    .program-card h3 {
+      color: var(--ink);
+
+      font-size: 25px;
+
+      line-height: 1.3;
+
+      margin-bottom: 12px;
+    }
+
+
+    .program-description {
+      color: var(--muted);
+
+      font-size: .93rem;
+
+      line-height: 1.75;
+
+      margin-bottom: 22px;
+    }
+
+
+    .features {
+      list-style: none;
+
+      margin-bottom: 27px;
+    }
+
+
+    .features li {
+      position: relative;
+
+      padding-left: 28px;
+
+      margin-bottom: 11px;
+
+      color: var(--text);
+
+      font-size: .9rem;
+    }
+
+
+    .features li::before {
+      content: "✓";
+
+      position: absolute;
+
+      left: 0;
+      top: 0;
+
+      width: 20px;
+      height: 20px;
+
+      border-radius: 50%;
+
+      display: grid;
+      place-items: center;
+
+      background: var(--purple-light);
+
+      color: var(--purple);
+
+      font-size: .7rem;
+
+      font-weight: 900;
+    }
+
+
+    .teal-card .features li::before {
+      background: white;
+
+      color: var(--teal-dark);
+    }
+
+
+    .price {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+
+      color: var(--ink);
+
+      font-size: 32px;
+
+      font-weight: 800;
+
+      margin-bottom: 18px;
+    }
+
+
+    .price span {
+      color: var(--muted);
+
+      font-size: .8rem;
+
+      font-weight: 500;
+    }
+
+
+    .buy-btn {
+      width: 100%;
+
+      border: none;
+
+      padding: 14px 20px;
+
+      border-radius: 999px;
+
+      background: var(--purple);
+
+      color: white;
+
+      font-family: inherit;
+
+      font-size: .92rem;
+
+      font-weight: 700;
+
+      cursor: pointer;
+
+      transition: .2s ease;
+    }
+
+
+    .buy-btn:hover {
+      background: var(--purple-dark);
+
+      transform: translateY(-1px);
+    }
+
+
+    .teal-card .buy-btn {
+      background: var(--teal-dark);
+    }
+
+
+    .teal-card .buy-btn:hover {
+      background: #176A73;
+    }
+
+
+    /* =====================================================
+       WHY SECTION
+    ===================================================== */
+
+    .why-section {
+      padding: 85px 0;
+
+      background: var(--teal-light);
+    }
+
+
+    .why-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 20px;
+    }
+
+
+    .why-card {
+      background: white;
+
+      border: 1px solid rgba(32,126,136,.10);
+
+      border-radius: 24px;
+
+      padding: 28px;
+    }
+
+
+    .why-number {
+      display: inline-grid;
+
+      place-items: center;
+
+      width: 38px;
+      height: 38px;
+
+      border-radius: 12px;
+
+      background: var(--purple-light);
+
+      color: var(--purple);
+
+      font-size: .85rem;
+
+      font-weight: 800;
+
+      margin-bottom: 18px;
+    }
+
+
+    .why-card h3 {
+      color: var(--ink);
+
+      font-size: 19px;
+
+      margin-bottom: 8px;
+    }
+
+
+    .why-card p {
+      color: var(--muted);
+
+      font-size: .9rem;
+
+      line-height: 1.7;
+    }
+
+
+    /* =====================================================
+       CTA
+    ===================================================== */
+
+    .cta-section {
+      padding: 80px 0;
+    }
+
+
+    .cta-box {
+      position: relative;
+
+      overflow: hidden;
+
+      background: var(--purple);
+
+      border-radius: 32px;
+
+      padding: 48px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+
+    .cta-box::after {
+      content: "";
+
+      position: absolute;
+
+      width: 180px;
+      height: 180px;
+
+      border-radius: 50%;
+
+      background: rgba(255,229,154,.18);
+
+      right: -60px;
+      top: -70px;
+    }
+
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+
+      max-width: 650px;
+    }
+
+
+    .cta-kicker {
+      display: inline-block;
+
+      padding: 7px 12px;
+
+      border-radius: 999px;
+
+      background: var(--yellow);
+
+      color: #5D4900;
+
+      font-size: .72rem;
+
+      font-weight: 800;
+
+      letter-spacing: .6px;
+
+      margin-bottom: 15px;
+    }
+
+
+    .cta-box h2 {
+      color: white;
+
+      font-size: 34px;
+
+      line-height: 1.2;
+
+      margin-bottom: 10px;
+    }
+
+
+    .cta-box p {
+      color: rgba(255,255,255,.78);
+
+      font-size: .92rem;
+    }
+
+
+    .cta-button {
+      position: relative;
+      z-index: 2;
+
+      flex-shrink: 0;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 13px 20px;
+
+      border-radius: 999px;
+
+      background: white;
+
+      color: var(--purple);
+
+      text-decoration: none;
+
+      font-size: .9rem;
+
+      font-weight: 800;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    footer {
+      border-top: 1px solid var(--line);
+
+      padding: 28px 0;
+
+      background: white;
+    }
+
+
+    .footer-inner {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+
+    .footer-brand {
+      color: var(--ink);
+
+      font-size: .9rem;
+
+      font-weight: 700;
+    }
+
+
+    .footer-text {
+      color: var(--muted);
+
+      font-size: .78rem;
+    }
+
+
+    /* =====================================================
+       CART OVERLAY
+    ===================================================== */
+
+    .cart-overlay {
+      position: fixed;
+
+      inset: 0;
+
+      background: rgba(51,32,79,.35);
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      transition: .25s ease;
+
+      z-index: 200;
+    }
+
+
+    .cart-overlay.active {
+      opacity: 1;
+
+      visibility: visible;
+    }
+
+
+    .cart-drawer {
+      position: fixed;
+
+      top: 0;
+      right: 0;
+
+      width: min(430px, 92vw);
+
+      height: 100vh;
+
+      background: white;
+
+      z-index: 210;
+
+      transform: translateX(100%);
+
+      transition: transform .3s ease;
+
+      display: flex;
+
+      flex-direction: column;
+
+      box-shadow: -15px 0 40px rgba(51,32,79,.12);
+    }
+
+
+    .cart-drawer.active {
+      transform: translateX(0);
+    }
+
+
+    .cart-header {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      padding: 22px 24px;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+
+    .cart-header h3 {
+      color: var(--ink);
+
+      font-size: 20px;
+    }
+
+
+    .close-cart {
+      width: 38px;
+      height: 38px;
+
+      border: 1px solid var(--line);
+
+      background: white;
+
+      border-radius: 50%;
+
+      cursor: pointer;
+
+      color: var(--ink);
+
+      font-size: 20px;
+    }
+
+
+    .cart-body {
+      flex: 1;
+
+      overflow-y: auto;
+
+      padding: 20px 24px;
+    }
+
+
+    .empty-cart {
+      text-align: center;
+
+      padding: 70px 20px;
+
+      color: var(--muted);
+    }
+
+
+    .empty-cart-icon {
+      font-size: 42px;
+
+      margin-bottom: 12px;
+    }
+
+
+    .cart-item {
+      display: flex;
+
+      align-items: flex-start;
+
+      justify-content: space-between;
+
+      gap: 15px;
+
+      padding: 17px 0;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+
+    .cart-item-info {
+      flex: 1;
+    }
+
+
+    .cart-item-name {
+      color: var(--ink);
+
+      font-size: .9rem;
+
+      font-weight: 700;
+
+      line-height: 1.4;
+
+      margin-bottom: 5px;
+    }
+
+
+    .cart-item-meta {
+      color: var(--muted);
+
+      font-size: .82rem;
+    }
+
+
+    .cart-item-right {
+      text-align: right;
+
+      flex-shrink: 0;
+    }
+
+
+    .cart-item-right strong {
+      display: block;
+
+      color: var(--ink);
+
+      font-size: .85rem;
+
+      margin-bottom: 4px;
+    }
+
+
+    .cart-remove {
+      border: none;
+
+      background: transparent;
+
+      color: #B14A5B;
+
+      cursor: pointer;
+
+      font-family: inherit;
+
+      font-size: .76rem;
+
+      font-weight: 700;
+
+      padding: 0;
+    }
+
+
+    .cart-remove:hover {
+      text-decoration: underline;
+    }
+
+
+    .cart-footer {
+      padding: 20px 24px;
+
+      border-top: 1px solid var(--line);
+
+      background: var(--cream);
+    }
+
+
+    .cart-total {
+      margin-bottom: 15px;
+    }
+
+    .cart-total-row {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      margin-bottom: 6px;
+
+      color: var(--ink);
+
+      font-size: 15px;
+
+      font-weight: 800;
+    }
+
+
+    .checkout-btn {
+      width: 100%;
+
+      border: none;
+
+      padding: 14px;
+
+      border-radius: 999px;
+
+      background: var(--purple);
+
+      color: white;
+
+      font-family: inherit;
+
+      font-size: .9rem;
+
+      font-weight: 800;
+
+      cursor: pointer;
+    }
+
+
+    .checkout-btn:disabled {
+      opacity: .45;
+
+      cursor: not-allowed;
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 900px) {
+
+      nav {
+        display: none;
+      }
+
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+      }
+
+
+      .hero-art {
+        min-height: 320px;
+      }
+
+
+      .program-grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      .cta-box {
+        flex-direction: column;
+
+        align-items: flex-start;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .nav {
+        height: 70px;
+      }
+
+
+      .nav-btn {
+        display: none;
+      }
+
+
+      .hero {
+        padding: 65px 0 50px;
+      }
+
+
+      h1 {
+        font-size: 42px;
+
+        letter-spacing: -1.5px;
+      }
+
+
+      .hero-text {
+        font-size: 15px;
+      }
+
+
+      .hero-art {
+        min-height: 270px;
+
+        border-radius: 26px;
+      }
+
+
+      .program-section,
+      .why-section,
+      .cta-section {
+        padding-top: 60px;
+
+        padding-bottom: 60px;
+      }
+
+
+      .section-heading h2 {
+        font-size: 30px;
+      }
+
+
+      .program-card {
+        padding: 27px;
+
+        border-radius: 24px;
+      }
+
+
+      .cta-box {
+        padding: 32px 26px;
+
+        border-radius: 26px;
+      }
+
+
+      .cta-box h2 {
+        font-size: 28px;
+      }
+
+
+      .footer-inner {
+        flex-direction: column;
+
+        align-items: flex-start;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+  <div class="container nav">
+
+    <a class="logo" href="index.html#home">
+
+      <span class="logo-mark">
+
+        <svg
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+
+          <path
+            d="M16 26V14"
+            stroke="white"
+            stroke-width="2.4"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="M16 17C12 17 9 14 9 10C13 10 16 12.5 16 17Z"
+            stroke="white"
+            stroke-width="2.2"
+            stroke-linejoin="round"
+          />
+
+          <path
+            d="M16 13C16 8.5 19.2 6 23 6C23 10.3 20.5 13 16 13Z"
+            stroke="white"
+            stroke-width="2.2"
+            stroke-linejoin="round"
+          />
+
+        </svg>
+
+      </span>
+
+      NextSprout
+
+    </a>
+
+
+    <nav>
+
+      <a href="index.html#home">Home</a>
+
+      <a href="index.html#about">About</a>
+
+      <a href="index.html#programs">Programs</a>
+
+      <a href="ebooks.html">E-books</a>
+      <a href="computer.html">Computer Skills</a>
+
+    </nav>
+
+
+    <div class="nav-actions">
+
+      <a
+        class="nav-btn"
+        href="index.html#programs"
+      >
+        Explore Programs
+      </a>
+
+
+      <button
+        class="cart-button"
+        onclick="openCart()"
+        aria-label="Open cart"
+      >
+
+        🛒 Cart
+
+        <span
+          class="cart-count"
+          id="cartCount"
+        >
+          0
+        </span>
+
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+  <div class="container hero-grid">
+
+
+    <div>
+
+      <span class="kicker">
+        ENGLISH SPEAKING
+      </span>
+
+
+      <h1>
+        Speak English with
+        <span>more confidence.</span>
+      </h1>
+
+
+      <p class="hero-text">
+
+        English becomes easier when you practise the words,
+        sentences and conversations you actually use in
+        everyday life.
+
+      </p>
+
+
+      <div class="hero-note">
+
+        <span class="hero-note-dot"></span>
+
+        Simple. Practical. Regular speaking practice.
+
+      </div>
+
+    </div>
+
+
+
+    <div class="hero-art">
+
+      <svg
+        class="speaking-illustration"
+        viewBox="0 0 360 330"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+
+        <!-- Speech bubble -->
+
+        <rect
+          x="48"
+          y="42"
+          width="250"
+          height="150"
+          rx="34"
+          fill="white"
+          stroke="#5425A8"
+          stroke-width="4"
+        />
+
+        <path
+          d="M112 190L95 226L148 194"
+          fill="white"
+          stroke="#5425A8"
+          stroke-width="4"
+          stroke-linejoin="round"
+        />
+
+
+        <!-- Text lines -->
+
+        <rect
+          x="88"
+          y="82"
+          width="135"
+          height="13"
+          rx="6.5"
+          fill="#5425A8"
+          opacity=".9"
+        />
+
+        <rect
+          x="88"
+          y="111"
+          width="180"
+          height="11"
+          rx="5.5"
+          fill="#8EDFE5"
+        />
+
+        <rect
+          x="88"
+          y="138"
+          width="145"
+          height="11"
+          rx="5.5"
+          fill="#FFE59A"
+        />
+
+
+        <!-- Person -->
+
+        <circle
+          cx="272"
+          cy="254"
+          r="30"
+          fill="#FFE59A"
+          stroke="#33204F"
+          stroke-width="4"
+        />
+
+        <path
+          d="M224 320C226 282 245 269 272 269C299 269 318 282 320 320"
+          fill="#5425A8"
+          stroke="#33204F"
+          stroke-width="4"
+        />
+
+
+        <!-- Mouth -->
+
+        <path
+          d="M261 258C267 263 276 263 282 258"
+          stroke="#33204F"
+          stroke-width="3"
+          stroke-linecap="round"
+        />
+
+
+        <!-- Small decorative dots -->
+
+        <circle
+          cx="40"
+          cy="275"
+          r="8"
+          fill="#8EDFE5"
+        />
+
+        <circle
+          cx="325"
+          cy="70"
+          r="9"
+          fill="#FFE59A"
+        />
+
+      </svg>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROGRAMS
+===================================================== -->
+
+<section class="program-section">
+
+  <div class="container">
+
+
+    <div class="section-heading">
+
+      <span class="mini-kicker">
+        CHOOSE YOUR PROGRAM
+      </span>
+
+
+      <h2>
+        English practice for everyday life.
+      </h2>
+
+
+      <p>
+        Simple, practical speaking practice designed for
+        kids and adults.
+      </p>
+
+    </div>
+
+
+
+    <div class="program-grid">
+
+
+      <!-- =================================================
+           KIDS
+      ================================================= -->
+
+      <div class="program-card">
+
+        <div class="card-decoration"></div>
+
+
+        <div class="program-icon">
+
+          <svg
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+
+            <circle
+              cx="16"
+              cy="10"
+              r="5"
+              stroke="currentColor"
+              stroke-width="2.2"
+            />
+
+            <path
+              d="M7 27C7.8 20.7 11 17.5 16 17.5C21 17.5 24.2 20.7 25 27"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+            />
+
+            <path
+              d="M9 7C7 7 5.5 8.5 5.5 10.5"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+
+          </svg>
+
+        </div>
+
+
+        <span class="program-tag">
+          FOR KIDS
+        </span>
+
+
+        <h3>
+          Everyday English For Kids
+        </h3>
+
+
+        <p class="program-description">
+
+          Help children become comfortable speaking English
+          through simple, fun and practical everyday
+          conversations.
+
+        </p>
+
+
+        <ul class="features">
+
+          <li>Everyday English sentences</li>
+
+          <li>Speaking activities</li>
+
+          <li>Vocabulary building</li>
+
+          <li>Simple conversations</li>
+
+          <li>Confidence-building practice</li>
+
+        </ul>
+
+
+        <div class="price">
+
+          ₹99
+
+          <span>/ month</span>
+
+        </div>
+
+
+        <button
+          class="buy-btn"
+          onclick="addToCart('program-english-kids')"
+        >
+          Add to Cart
+        </button>
+
+      </div>
+
+
+
+      <!-- =================================================
+           ADULTS
+      ================================================= -->
+
+      <div class="program-card teal-card">
+
+        <div class="card-decoration"></div>
+
+
+        <div class="program-icon">
+
+          <svg
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+
+            <rect
+              x="6"
+              y="5"
+              width="20"
+              height="22"
+              rx="4"
+              stroke="currentColor"
+              stroke-width="2.2"
+            />
+
+            <path
+              d="M11 11H21"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+
+            <path
+              d="M11 16H21"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+
+            <path
+              d="M11 21H17"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+
+          </svg>
+
+        </div>
+
+
+        <span class="program-tag">
+          FOR ADULTS
+        </span>
+
+
+        <h3>
+          Everyday English For Adults
+        </h3>
+
+
+        <p class="program-description">
+
+          Improve your everyday English speaking skills and
+          become more confident in conversations at work and
+          in daily life.
+
+        </p>
+
+
+        <ul class="features">
+
+          <li>Daily-use English sentences</li>
+
+          <li>Speaking practice</li>
+
+          <li>Workplace conversations</li>
+
+          <li>Vocabulary and expressions</li>
+
+          <li>Confidence-building activities</li>
+
+        </ul>
+
+
+        <div class="price">
+
+          ₹99
+
+          <span>/ month</span>
+
+        </div>
+
+
+        <button
+          class="buy-btn"
+          onclick="addToCart('program-english-adults')"
+        >
+          Add to Cart
+        </button>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     WHY NEXTSPROUT
+===================================================== -->
+
+<section class="why-section">
+
+  <div class="container">
+
+
+    <div class="section-heading">
+
+      <span class="mini-kicker">
+        WHY THIS PROGRAM
+      </span>
+
+
+      <h2>
+        Learn English you can actually use.
+      </h2>
+
+
+      <p>
+        The focus is on regular practice rather than
+        memorising difficult grammar rules.
+      </p>
+
+    </div>
+
+
+
+    <div class="why-grid">
+
+
+      <div class="why-card">
+
+        <span class="why-number">
+          01
+        </span>
+
+        <h3>
+          Everyday conversations
+        </h3>
+
+        <p>
+          Practise sentences and conversations that are
+          useful in real situations.
+        </p>
+
+      </div>
+
+
+
+      <div class="why-card">
+
+        <span class="why-number">
+          02
+        </span>
+
+        <h3>
+          Regular speaking practice
+        </h3>
+
+        <p>
+          Build confidence by using English repeatedly
+          instead of only reading about it.
+        </p>
+
+      </div>
+
+
+
+      <div class="why-card">
+
+        <span class="why-number">
+          03
+        </span>
+
+        <h3>
+          Confidence over perfection
+        </h3>
+
+        <p>
+          The goal is to help learners communicate more
+          comfortably, one conversation at a time.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta-section">
+
+  <div class="container">
+
+    <div class="cta-box">
+
+
+      <div class="cta-content">
+
+        <span class="cta-kicker">
+          START SMALL
+        </span>
+
+
+        <h2>
+          Give your English speaking a regular place in your week.
+        </h2>
+
+
+        <p>
+          Choose the program that matches your learner and
+          start building practical speaking habits.
+        </p>
+
+      </div>
+
+
+      <a
+        class="cta-button"
+        href="#programs"
+        onclick="document.querySelector('.program-section').scrollIntoView({behavior:'smooth'}); return false;"
+      >
+        View Programs
+      </a>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+  <div class="container footer-inner">
+
+    <div class="footer-brand">
+      NextSprout
+    </div>
+
+
+    <div class="footer-text">
+      Helping learners grow beyond the classroom.
+    </div>
+
+  </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     CART OVERLAY
+===================================================== -->
+
+<div
+  class="cart-overlay"
+  id="cartOverlay"
+  onclick="closeCart()"
+></div>
+
+
+
+<!-- =====================================================
+     CART DRAWER
+===================================================== -->
+
+<aside
+  class="cart-drawer"
+  id="cartDrawer"
+  aria-label="Shopping cart"
+>
+
+
+  <div class="cart-header">
+
+    <h3>
+      Your Cart
+    </h3>
+
+
+    <button
+      class="close-cart"
+      onclick="closeCart()"
+      aria-label="Close cart"
+    >
+      ×
+    </button>
+
+  </div>
+
+
+
+  <div
+    class="cart-body"
+    id="cartItems"
+  >
+  </div>
+
+
+
+  <div class="cart-footer">
+
+    <div class="cart-total">
+
+      <div id="cartTotal">
+        ₹0
+      </div>
+
+    </div>
+
+
+    <button
+      class="checkout-btn"
+      id="checkoutButton"
+      onclick="proceedToCheckout()"
+      disabled
+    >
+      Proceed to Checkout
+    </button>
+
+  </div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     SHARED CART JAVASCRIPT
+===================================================== -->
+
+<script src="cart.js"></script>
+
+
+</body>
+</html>

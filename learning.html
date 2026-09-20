@@ -1,0 +1,2823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Learning & Practice | NextSprout</title>
+
+<meta
+  name="description"
+  content="NextSprout Learning & Practice helps children learn Maths, practise regularly, clear doubts and build confidence."
+>
+
+<!-- ================= GOOGLE FONT ================= -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
+>
+
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+
+  --purple:#5425A8;
+  --purple-dark:#3F1888;
+  --purple-light:#F1EAFF;
+
+  --teal:#8EDFE5;
+  --teal-dark:#207E88;
+  --teal-light:#E9FBFC;
+
+  --yellow:#FFE59A;
+  --yellow-light:#FFF7D8;
+
+  --cream:#FFFDF7;
+
+  --ink:#33204F;
+  --text:#443A50;
+  --muted:#756B80;
+
+  --white:#FFFFFF;
+
+  --line:#EAE4F0;
+
+  --green:#4FA96D;
+
+  --shadow:
+    0 12px 35px rgba(67,39,107,.08);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+  font-family:"Poppins",sans-serif;
+
+  color:var(--ink);
+
+  background:var(--cream);
+
+  line-height:1.6;
+
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button{
+  font-family:inherit;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container{
+
+  width:min(1120px,92%);
+
+  margin:auto;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+
+  position:sticky;
+
+  top:0;
+
+  z-index:50;
+
+  background:rgba(255,253,247,.95);
+
+  backdrop-filter:blur(14px);
+
+  border-bottom:1px solid rgba(234,228,240,.8);
+
+}
+
+
+.nav{
+
+  height:76px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+}
+
+
+/* LOGO */
+
+.logo{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  font-size:1.3rem;
+
+  font-weight:800;
+
+  letter-spacing:-.5px;
+
+}
+
+
+/* Logo */
+
+.logo-mark{
+
+  width:39px;
+
+  height:39px;
+
+  border-radius:12px 12px 12px 5px;
+
+  background:var(--purple);
+
+  display:grid;
+
+  place-items:center;
+
+  color:white;
+
+  transform:rotate(-3deg);
+
+}
+
+
+/* Navigation */
+
+nav{
+
+  display:flex;
+
+  gap:28px;
+
+  color:#655A73;
+
+  font-size:.9rem;
+
+  font-weight:600;
+
+}
+
+nav a{
+
+  transition:.2s ease;
+
+}
+
+nav a:hover{
+
+  color:var(--purple);
+
+}
+
+
+/* Navigation actions */
+
+.nav-actions{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+}
+
+
+.nav-btn{
+
+  padding:10px 18px;
+
+  border-radius:999px;
+
+  background:var(--purple);
+
+  color:white;
+
+  font-size:.85rem;
+
+  font-weight:700;
+
+  transition:.2s ease;
+
+}
+
+
+.nav-btn:hover{
+
+  background:var(--purple-dark);
+
+  transform:translateY(-1px);
+
+}
+
+
+/* Cart */
+
+.cart-button{
+
+  border:1px solid var(--line);
+
+  background:white;
+
+  padding:9px 13px;
+
+  border-radius:999px;
+
+  cursor:pointer;
+
+  font-size:.85rem;
+
+  font-weight:700;
+
+  color:var(--ink);
+
+}
+
+
+.cart-count{
+
+  display:inline-grid;
+
+  place-items:center;
+
+  min-width:22px;
+
+  height:22px;
+
+  padding:0 5px;
+
+  border-radius:50%;
+
+  background:var(--purple);
+
+  color:white;
+
+  font-size:.7rem;
+
+  margin-left:4px;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+  position:relative;
+
+  overflow:hidden;
+
+  padding:82px 20px 75px;
+
+  text-align:center;
+
+}
+
+
+/* Decorative circles */
+
+.hero::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:260px;
+
+  height:260px;
+
+  border-radius:50%;
+
+  background:var(--teal-light);
+
+  left:-110px;
+
+  top:80px;
+
+  z-index:-1;
+
+}
+
+
+.hero::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:210px;
+
+  height:210px;
+
+  border-radius:50%;
+
+  background:var(--yellow-light);
+
+  right:-80px;
+
+  top:50px;
+
+  z-index:-1;
+
+}
+
+
+/* Hero label */
+
+.hero-label{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  background:var(--yellow-light);
+
+  color:#765A00;
+
+  padding:8px 17px;
+
+  border-radius:999px;
+
+  font-size:.78rem;
+
+  font-weight:700;
+
+  margin-bottom:24px;
+
+}
+
+
+.hero-label svg{
+
+  width:17px;
+
+  height:17px;
+
+}
+
+
+/* Heading */
+
+.hero h1{
+
+  font-size:clamp(2.7rem,6vw,4.7rem);
+
+  line-height:1.05;
+
+  letter-spacing:-2.5px;
+
+  font-weight:800;
+
+  max-width:850px;
+
+  margin:auto;
+
+}
+
+
+.hero h1 span{
+
+  color:var(--purple);
+
+}
+
+
+/* Intro */
+
+.intro{
+
+  color:var(--muted);
+
+  font-size:1.05rem;
+
+  max-width:720px;
+
+  margin:22px auto 0;
+
+}
+
+
+/* =========================================================
+   HERO ICON
+========================================================= */
+
+.hero-visual{
+
+  width:150px;
+
+  height:150px;
+
+  margin:38px auto 0;
+
+  background:var(--purple-light);
+
+  border-radius:45px;
+
+  display:grid;
+
+  place-items:center;
+
+}
+
+
+.hero-visual svg{
+
+  width:88px;
+
+  height:88px;
+
+  stroke:var(--purple);
+
+  fill:none;
+
+  stroke-width:2;
+
+  stroke-linecap:round;
+
+  stroke-linejoin:round;
+
+}
+
+
+/* =========================================================
+   WEEKLY ROUTINE
+========================================================= */
+
+.routine-section{
+
+  padding:25px 0 85px;
+
+}
+
+
+.section-heading{
+
+  text-align:center;
+
+  max-width:700px;
+
+  margin:0 auto 45px;
+
+}
+
+
+.kicker{
+
+  color:var(--purple);
+
+  font-size:.72rem;
+
+  font-weight:800;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+
+}
+
+
+.section-heading h2{
+
+  font-size:clamp(2rem,4vw,3rem);
+
+  line-height:1.15;
+
+  letter-spacing:-1.4px;
+
+  margin:8px 0 12px;
+
+  font-weight:800;
+
+}
+
+
+.section-heading p{
+
+  color:var(--muted);
+
+  font-size:.95rem;
+
+}
+
+
+/* Routine cards */
+
+.routine-grid{
+
+  max-width:1000px;
+
+  margin:auto;
+
+  padding:0 20px;
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:22px;
+
+}
+
+
+.routine-card{
+
+  background:white;
+
+  border:1px solid var(--line);
+
+  border-radius:24px;
+
+  padding:30px 25px;
+
+  text-align:center;
+
+  box-shadow:var(--shadow);
+
+  transition:.25s ease;
+
+}
+
+
+.routine-card:hover{
+
+  transform:translateY(-5px);
+
+  box-shadow:
+    0 18px 45px rgba(67,39,107,.12);
+
+}
+
+
+.routine-icon{
+
+  width:64px;
+
+  height:64px;
+
+  border-radius:19px;
+
+  background:var(--teal-light);
+
+  display:grid;
+
+  place-items:center;
+
+  margin:0 auto 18px;
+
+}
+
+
+.routine-card:nth-child(2) .routine-icon{
+
+  background:var(--purple-light);
+
+}
+
+
+.routine-card:nth-child(3) .routine-icon{
+
+  background:var(--yellow-light);
+
+}
+
+
+.routine-icon svg{
+
+  width:34px;
+
+  height:34px;
+
+  fill:none;
+
+  stroke:var(--teal-dark);
+
+  stroke-width:2;
+
+  stroke-linecap:round;
+
+  stroke-linejoin:round;
+
+}
+
+
+.routine-card:nth-child(2) .routine-icon svg{
+
+  stroke:var(--purple);
+
+}
+
+
+.routine-card:nth-child(3) .routine-icon svg{
+
+  stroke:#9B7500;
+
+}
+
+
+.routine-card h3{
+
+  font-size:1rem;
+
+  margin-bottom:5px;
+
+  font-weight:800;
+
+}
+
+
+.routine-card p{
+
+  color:var(--muted);
+
+  font-size:.82rem;
+
+}
+
+
+/* =========================================================
+   GRADE PROGRAMS
+========================================================= */
+
+.programs-section{
+
+  padding:85px 0 95px;
+
+  background:var(--teal);
+
+}
+
+
+.programs-grid{
+
+  max-width:1000px;
+
+  margin:auto;
+
+  padding:0 20px;
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:20px;
+
+}
+
+
+.grade-card{
+
+  position:relative;
+
+  background:white;
+
+  border:1px solid rgba(255,255,255,.7);
+
+  border-radius:24px;
+
+  padding:28px;
+
+  box-shadow:0 12px 30px rgba(32,126,136,.10);
+
+  overflow:hidden;
+
+  transition:.25s ease;
+
+}
+
+
+.grade-card:hover{
+
+  transform:translateY(-5px);
+
+  box-shadow:0 18px 40px rgba(32,126,136,.16);
+
+}
+
+
+.grade-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+
+  top:0;
+
+  width:100%;
+
+  height:5px;
+
+  background:var(--purple);
+
+}
+
+
+.grade-card:nth-child(even)::before{
+
+  background:var(--yellow);
+
+}
+
+
+.grade-icon{
+
+  width:55px;
+
+  height:55px;
+
+  border-radius:17px;
+
+  background:var(--purple-light);
+
+  display:grid;
+
+  place-items:center;
+
+  margin-bottom:18px;
+
+}
+
+
+.grade-card:nth-child(even) .grade-icon{
+
+  background:var(--yellow-light);
+
+}
+
+
+.grade-icon svg{
+
+  width:30px;
+
+  height:30px;
+
+  fill:none;
+
+  stroke:var(--purple);
+
+  stroke-width:2;
+
+  stroke-linecap:round;
+
+  stroke-linejoin:round;
+
+}
+
+
+.grade-card:nth-child(even) .grade-icon svg{
+
+  stroke:#9B7500;
+
+}
+
+
+.grade-name{
+
+  font-size:1.05rem;
+
+  font-weight:800;
+
+  margin-bottom:5px;
+
+}
+
+
+.grade-description{
+
+  color:var(--muted);
+
+  font-size:.78rem;
+
+  margin-bottom:18px;
+
+}
+
+
+.grade-price{
+
+  font-size:1.25rem;
+
+  color:var(--purple);
+
+  font-weight:800;
+
+  margin-bottom:17px;
+
+}
+
+
+.grade-price span{
+
+  color:var(--muted);
+
+  font-size:.72rem;
+
+  font-weight:500;
+
+}
+
+
+/* Buy button */
+
+.buy-btn{
+
+  display:block;
+
+  width:100%;
+
+  padding:11px 16px;
+
+  border:0;
+
+  border-radius:12px;
+
+  background:var(--purple);
+
+  color:white;
+
+  text-decoration:none;
+
+  font-weight:800;
+
+  cursor:pointer;
+
+  font-size:.82rem;
+
+  transition:.2s ease;
+
+}
+
+
+.buy-btn:hover{
+
+  background:var(--purple-dark);
+
+  transform:translateY(-1px);
+
+}
+
+
+.grade-card:nth-child(even) .buy-btn{
+
+  background:var(--teal-dark);
+
+}
+
+
+.grade-card:nth-child(even) .buy-btn:hover{
+
+  background:#176B74;
+
+}
+
+
+/* =========================================================
+   FOCUS SECTION
+========================================================= */
+
+.focus-section{
+
+  padding:90px 0;
+
+  background:var(--cream);
+
+}
+
+
+.focus-layout{
+
+  display:grid;
+
+  grid-template-columns:.8fr 1.2fr;
+
+  gap:65px;
+
+  align-items:center;
+
+}
+
+
+.focus-illustration{
+
+  width:240px;
+
+  height:240px;
+
+  border-radius:50%;
+
+  background:var(--purple-light);
+
+  display:grid;
+
+  place-items:center;
+
+  margin:auto;
+
+}
+
+
+.focus-illustration svg{
+
+  width:145px;
+
+  height:145px;
+
+  fill:none;
+
+  stroke:var(--purple);
+
+  stroke-width:2;
+
+  stroke-linecap:round;
+
+  stroke-linejoin:round;
+
+}
+
+
+.focus-heading .kicker{
+
+  color:var(--purple);
+
+}
+
+
+.focus-heading h2{
+
+  font-size:clamp(2rem,4vw,3rem);
+
+  line-height:1.15;
+
+  letter-spacing:-1.5px;
+
+  margin:8px 0 15px;
+
+  font-weight:800;
+
+}
+
+
+.focus-heading > p{
+
+  color:var(--muted);
+
+  font-size:.92rem;
+
+  margin-bottom:24px;
+
+}
+
+
+/* Focus points */
+
+.focus-points{
+
+  display:grid;
+
+  gap:15px;
+
+}
+
+
+.focus-point{
+
+  background:white;
+
+  border:1px solid var(--line);
+
+  border-radius:18px;
+
+  padding:17px 20px;
+
+  display:flex;
+
+  gap:14px;
+
+  align-items:flex-start;
+
+}
+
+
+.focus-number{
+
+  width:34px;
+
+  height:34px;
+
+  border-radius:10px;
+
+  background:var(--purple);
+
+  color:white;
+
+  display:grid;
+
+  place-items:center;
+
+  flex:none;
+
+  font-size:.72rem;
+
+  font-weight:800;
+
+}
+
+
+.focus-point h3{
+
+  font-size:.9rem;
+
+  margin-bottom:3px;
+
+  font-weight:800;
+
+}
+
+
+.focus-point p{
+
+  color:var(--muted);
+
+  font-size:.76rem;
+
+}
+
+
+/* =========================================================
+   HOW IT WORKS
+========================================================= */
+
+.how-section{
+
+  padding:90px 0;
+
+  background:var(--teal);
+
+}
+
+
+.steps{
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:22px;
+
+  max-width:1000px;
+
+  margin:auto;
+
+}
+
+
+.step{
+
+  text-align:center;
+
+  padding:30px 22px;
+
+}
+
+
+.step-number{
+
+  width:48px;
+
+  height:48px;
+
+  margin:0 auto 18px;
+
+  border-radius:15px;
+
+  background:var(--purple);
+
+  color:white;
+
+  display:grid;
+
+  place-items:center;
+
+  font-weight:800;
+
+}
+
+
+.step h3{
+
+  font-size:1rem;
+
+  margin-bottom:6px;
+
+}
+
+
+.step p{
+
+  color:#286B72;
+
+  font-size:.82rem;
+
+}
+
+
+/* =========================================================
+   PARENT CTA
+========================================================= */
+
+.parent-section{
+
+  padding:25px 0 90px;
+
+}
+
+
+.parent-box{
+
+  max-width:1000px;
+
+  margin:auto;
+
+  background:var(--purple);
+
+  color:white;
+
+  border-radius:30px;
+
+  padding:45px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:35px;
+
+}
+
+
+.parent-box .kicker{
+
+  color:var(--yellow);
+
+}
+
+
+.parent-box h2{
+
+  font-size:clamp(1.7rem,3vw,2.5rem);
+
+  line-height:1.15;
+
+  margin:7px 0 10px;
+
+  letter-spacing:-1px;
+
+}
+
+
+.parent-box p{
+
+  color:#E9DFFF;
+
+  font-size:.9rem;
+
+  max-width:650px;
+
+}
+
+
+.parent-button{
+
+  flex:none;
+
+  background:var(--yellow);
+
+  color:var(--ink);
+
+  padding:13px 20px;
+
+  border-radius:12px;
+
+  font-weight:800;
+
+  font-size:.85rem;
+
+  transition:.2s ease;
+
+}
+
+
+.parent-button:hover{
+
+  transform:translateY(-2px);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+  border-top:1px solid var(--line);
+
+  padding:27px 0;
+
+  background:white;
+
+  color:#81768D;
+
+  font-size:.76rem;
+
+}
+
+
+.footer{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:20px;
+
+}
+
+
+.footer strong{
+
+  color:var(--ink);
+
+  font-weight:800;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:820px){
+
+  nav{
+
+    display:none;
+
+  }
+
+
+  .nav{
+
+    height:70px;
+
+  }
+
+
+  .routine-grid{
+
+    grid-template-columns:1fr;
+
+    max-width:580px;
+
+  }
+
+
+  .programs-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+    max-width:700px;
+
+  }
+
+
+  .focus-layout{
+
+    grid-template-columns:1fr;
+
+    gap:40px;
+
+  }
+
+
+  .focus-heading{
+
+    text-align:center;
+
+  }
+
+
+  .steps{
+
+    grid-template-columns:1fr;
+
+    max-width:500px;
+
+  }
+
+
+  .parent-box{
+
+    display:block;
+
+    padding:35px;
+
+  }
+
+
+  .parent-button{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+  }
+
+}
+
+
+@media(max-width:540px){
+
+  .nav-btn{
+
+    display:none;
+
+  }
+
+
+  .hero{
+
+    padding:65px 20px 60px;
+
+  }
+
+
+  .hero h1{
+
+    font-size:2.55rem;
+
+    letter-spacing:-1.7px;
+
+  }
+
+
+  .intro{
+
+    font-size:.9rem;
+
+  }
+
+
+  .hero-visual{
+
+    width:125px;
+
+    height:125px;
+
+    border-radius:35px;
+
+  }
+
+
+  .hero-visual svg{
+
+    width:72px;
+
+    height:72px;
+
+  }
+
+
+  .programs-grid{
+
+    grid-template-columns:1fr;
+
+    max-width:450px;
+
+  }
+
+
+  .programs-section{
+
+    padding:65px 0;
+
+  }
+
+
+  .focus-section{
+
+    padding:65px 0;
+
+  }
+
+
+  .focus-illustration{
+
+    width:190px;
+
+    height:190px;
+
+  }
+
+
+  .focus-illustration svg{
+
+    width:115px;
+
+    height:115px;
+
+  }
+
+
+  .parent-box{
+
+    border-radius:22px;
+
+    padding:30px 25px;
+
+  }
+
+
+  .footer{
+
+    display:block;
+
+  }
+
+
+  .footer span{
+
+    display:block;
+
+    margin-top:7px;
+
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+button:focus-visible,
+a:focus-visible{
+
+  outline:3px solid var(--yellow);
+
+  outline-offset:3px;
+
+}
+
+
+/* SHARED CART STYLES */
+.cart-overlay{
+
+  position:fixed;
+
+  inset:0;
+
+  background:rgba(35,20,50,.38);
+
+  z-index:100;
+
+  display:none;
+
+}
+
+
+.cart-overlay.active{
+
+  display:block;
+
+}
+
+
+/* =========================================================
+   CART DRAWER
+========================================================= */
+
+.cart-drawer{
+
+  position:fixed;
+
+  right:0;
+
+  top:0;
+
+  height:100vh;
+
+  width:min(430px,92%);
+
+  background:white;
+
+  z-index:101;
+
+  padding:25px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  box-shadow:-10px 0 35px rgba(0,0,0,.15);
+
+  transform:translateX(100%);
+
+  transition:.3s ease;
+
+}
+
+
+.cart-drawer.active{
+
+  transform:translateX(0);
+
+}
+
+
+.cart-header{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  padding-bottom:20px;
+
+  border-bottom:1px solid var(--line);
+
+}
+
+
+.cart-header h2{
+
+  font-size:1.35rem;
+
+  font-weight:800;
+
+}
+
+
+.close-cart{
+
+  border:none;
+
+  background:var(--purple-light);
+
+  color:var(--purple);
+
+  width:36px;
+
+  height:36px;
+
+  border-radius:50%;
+
+  cursor:pointer;
+
+  font-size:20px;
+
+}
+
+
+/* Cart items */
+
+.cart-items{
+
+  flex:1;
+
+  overflow-y:auto;
+
+  padding:20px 0;
+
+}
+
+
+.cart-item{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:15px;
+
+  padding:17px 0;
+
+  border-bottom:1px solid var(--line);
+
+}
+
+
+.cart-item-info{
+
+  min-width:0;
+
+}
+
+
+.cart-item-name{
+
+  color:var(--ink);
+
+  font-size:.9rem;
+
+  font-weight:700;
+
+  margin-bottom:3px;
+
+}
+
+
+.cart-item-meta{
+
+  color:var(--muted);
+
+  font-size:.76rem;
+
+}
+
+
+.cart-item-right{
+
+  text-align:right;
+
+  flex-shrink:0;
+
+}
+
+
+.cart-item-right strong{
+
+  display:block;
+
+  color:var(--ink);
+
+  font-size:.85rem;
+
+  margin-bottom:4px;
+
+}
+
+
+.cart-remove{
+
+  border:none;
+
+  background:none;
+
+  color:#C44;
+
+  cursor:pointer;
+
+  font-family:inherit;
+
+  font-size:.72rem;
+
+  padding:0;
+
+}
+
+
+.cart-remove:hover{
+
+  text-decoration:underline;
+
+}
+
+
+/* Cart footer */
+
+.cart-footer{
+
+  border-top:1px solid var(--line);
+
+  padding-top:20px;
+
+}
+
+
+.cart-total{
+
+  margin-bottom:15px;
+
+}
+
+
+.cart-total-row{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  color:var(--ink);
+
+  font-size:1rem;
+
+  font-weight:800;
+
+  margin-bottom:6px;
+
+}
+
+
+.checkout-btn{
+
+  width:100%;
+
+  padding:14px;
+
+  border:none;
+
+  border-radius:12px;
+
+  background:var(--purple);
+
+  color:white;
+
+  font-size:.9rem;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+}
+
+
+.checkout-btn:hover{
+
+  background:var(--purple-dark);
+
+}
+
+
+.checkout-btn:disabled{
+
+  opacity:.45;
+
+  cursor:not-allowed;
+
+}
+
+
+.empty-cart{
+
+  text-align:center;
+
+  color:var(--muted);
+
+  padding:60px 10px;
+
+}
+
+
+.empty-cart p{
+
+  font-size:.85rem;
+
+  margin-bottom:4px;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+  border-top:1px solid var(--line);
+
+  padding:27px 0;
+
+  background:white;
+
+  color:#81768D;
+
+  font-size:.76rem;
+
+}
+
+
+.footer{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:20px;
+
+}
+
+
+.footer strong{
+
+  color:var(--ink);
+
+  font-weight:800;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =======================================================
+     HEADER
+======================================================= -->
+
+<header>
+
+<div class="container nav">
+
+
+<a class="logo" href="index.html#home">
+
+<span class="logo-mark">
+
+<svg
+  width="22"
+  height="22"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="white"
+  stroke-width="1.8"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+
+<path d="M12 20V10"/>
+
+<path d="M12 13C8 13 6 11 6 8"/>
+
+<path d="M12 11C16 11 18 9 18 6"/>
+
+<path d="M7 19h10"/>
+
+</svg>
+
+</span>
+
+NextSprout
+
+</a>
+
+
+<nav>
+
+<a href="index.html#home">Home</a>
+
+<a href="index.html#about">About</a>
+
+<a href="index.html#programs">Programs</a>
+
+<a href="index.html#ebooks">E-books</a>
+<a href="computer.html">Computer Skills</a>
+
+</nav>
+
+
+<div class="nav-actions">
+
+
+<a
+  class="nav-btn"
+  href="index.html#programs"
+>
+
+Explore Programs
+
+</a>
+
+
+<button
+  class="cart-button"
+  onclick="openCart()"
+>
+
+Cart
+
+<span
+  class="cart-count"
+  id="cartCount"
+>
+0
+</span>
+
+</button>
+
+
+</div>
+
+</div>
+
+</header>
+
+
+
+<!-- =======================================================
+     HERO
+======================================================= -->
+
+<section class="hero">
+
+
+<div class="hero-label">
+
+<svg
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+>
+
+<path d="M12 21V11"/>
+
+<path d="M12 14C8 14 6 12 6 9"/>
+
+<path d="M12 12C16 12 18 10 18 7"/>
+
+</svg>
+
+Learn. Practise. Grow.
+
+</div>
+
+
+<h1>
+
+Making
+<span>learning & practice</span>
+a weekly habit.
+
+</h1>
+
+
+<p class="intro">
+
+Grade-wise Maths learning and practice designed around
+your child's school syllabus — helping children understand
+concepts, practise regularly and become more confident.
+
+</p>
+
+
+<!-- SIMPLE LINE ART -->
+
+<div class="hero-visual">
+
+<svg viewBox="0 0 100 100">
+
+<!-- notebook -->
+
+<rect
+  x="25"
+  y="17"
+  width="50"
+  height="66"
+  rx="7"
+/>
+
+<!-- lines -->
+
+<path d="M36 34h28"/>
+
+<path d="M36 44h28"/>
+
+<path d="M36 54h18"/>
+
+<!-- check -->
+
+<path d="M36 68l5 5 10-12"/>
+
+<!-- pencil -->
+
+<path d="M64 62l12 12"/>
+
+<path d="M68 58l8 8"/>
+
+<path d="M63 63l-4 8 8-4z"/>
+
+</svg>
+
+</div>
+
+</section>
+
+
+
+<!-- =======================================================
+     WEEKLY ROUTINE
+======================================================= -->
+
+<section class="routine-section">
+
+
+<div class="section-heading">
+
+<div class="kicker">
+Weekly Learning
+</div>
+
+<h2>
+A simple routine children can follow.
+</h2>
+
+<p>
+Regular learning and practice can help children stay
+connected with what they are learning in school.
+</p>
+
+</div>
+
+
+
+<div class="routine-grid">
+
+
+<!-- MONDAY-FRIDAY -->
+
+<div class="routine-card">
+
+<div class="routine-icon">
+
+<svg viewBox="0 0 48 48">
+
+<circle cx="24" cy="24" r="16"/>
+
+<path d="M24 15v10l7 4"/>
+
+</svg>
+
+</div>
+
+<h3>
+Monday – Friday
+</h3>
+
+<p>
+Doubt support and guidance
+when children need help.
+</p>
+
+</div>
+
+
+
+<!-- SATURDAY -->
+
+<div class="routine-card">
+
+<div class="routine-icon">
+
+<svg viewBox="0 0 48 48">
+
+<rect
+  x="10"
+  y="8"
+  width="28"
+  height="32"
+  rx="4"
+/>
+
+<path d="M16 17h16"/>
+
+<path d="M16 24h16"/>
+
+<path d="M16 31h10"/>
+
+</svg>
+
+</div>
+
+<h3>
+Saturday
+</h3>
+
+<p>
+A new worksheet for children
+to practise what they have learned.
+</p>
+
+</div>
+
+
+
+<!-- SUNDAY -->
+
+<div class="routine-card">
+
+<div class="routine-icon">
+
+<svg viewBox="0 0 48 48">
+
+<circle cx="24" cy="24" r="17"/>
+
+<path d="M20 17l11 7-11 7z"/>
+
+</svg>
+
+</div>
+
+<h3>
+Sunday
+</h3>
+
+<p>
+A 1-hour live learning session
+to explain concepts and answer questions.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =======================================================
+     GRADE PROGRAMS
+======================================================= -->
+
+<section class="programs-section" id="grades">
+
+
+<div class="section-heading">
+
+<div class="kicker">
+Grade-wise Maths
+</div>
+
+<h2>
+Choose your child's learning level.
+</h2>
+
+<p>
+Select the grade that matches your child's current
+school level and start building a regular practice habit.
+</p>
+
+</div>
+
+
+
+<div class="programs-grid">
+
+
+<!-- GRADE 1 -->
+
+<div class="grade-card">
+
+<div class="grade-icon">
+
+<svg viewBox="0 0 48 48">
+
+<path d="M18 34h18"/>
+
+<path d="M22 14h7v20"/>
+
+<path d="M19 18l6-4"/>
+
+</svg>
+
+</div>
+
+<div class="grade-name">
+Grade 1 Maths
+</div>
+
+<p class="grade-description">
+Foundation Maths concepts and practice.
+</p>
+
+<div class="grade-price">
+₹199 <span>/ month</span>
+</div>
+
+<a
+  class="buy-btn"
+  href="index.html#programs"
+>
+Coming Soon
+</a>
+
+</div>
+
+
+
+<!-- GRADE 2 -->
+
+<div class="grade-card">
+
+<div class="grade-icon">
+
+<svg viewBox="0 0 48 48">
+
+<path d="M15 18c2-5 15-6 18 0 2 5-3 8-14 14h15"/>
+
+</svg>
+
+</div>
+
+<div class="grade-name">
+Grade 2 Maths
+</div>
+
+<p class="grade-description">
+Build stronger number and calculation skills.
+</p>
+
+<div class="grade-price">
+₹199 <span>/ month</span>
+</div>
+
+<a
+  class="buy-btn"
+  href="index.html#programs"
+>
+Coming Soon
+</a>
+
+</div>
+
+
+
+<!-- GRADE 3 -->
+
+<div class="grade-card">
+
+<div class="grade-icon">
+
+<svg viewBox="0 0 48 48">
+
+<path d="M16 15c5-4 14-3 16 2 1 4-3 6-7 7 5 0 9 2 8 7-2 6-13 6-18 2"/>
+
+</svg>
+
+</div>
+
+<div class="grade-name">
+Grade 3 Maths
+</div>
+
+<p class="grade-description">
+Concept learning, worksheets and regular practice.
+</p>
+
+<div class="grade-price">
+₹199 <span>/ month</span>
+</div>
+
+<button class="buy-btn" type="button" onclick="addToCart('learning-grade-3')">Buy Now</button>
+
+</div>
+
+
+
+<!-- GRADE 4 -->
+
+<div class="grade-card">
+
+<div class="grade-icon">
+
+<svg viewBox="0 0 48 48">
+
+<path d="M29 34V14L15 28h21"/>
+
+</svg>
+
+</div>
+
+<div class="grade-name">
+Grade 4 Maths
+</div>
+
+<p class="grade-description">
+Develop stronger problem-solving skills.
+</p>
+
+<div class="grade-price">
+₹199 <span>/ month</span>
+</div>
+
+<a
+  class="buy-btn"
+  href="index.html#programs"
+>
+Coming Soon
+</a>
+
+</div>
+
+
+
+<!-- GRADE 5 -->
+
+<div class="grade-card">
+
+<div class="grade-icon">
+
+<svg viewBox="0 0 48 48">
+
+<path d="M32 14H17v9c2-2 5-3 8-3 5 0 9 3 9 7 0 5-5 8-11 8-4 0-8-1-10-3"/>
+
+</svg>
+
+</div>
+
+<div class="grade-name">
+Grade 5 Maths
+</div>
+
+<p class="grade-description">
+Practice concepts through structured worksheets.
+</p>
+
+<div class="grade-price">
+₹199 <span>/ month</span>
+</div>
+
+<a
+  class="buy-btn"
+  href="index.html#programs"
+>
+Coming Soon
+</a>
+
+</div>
+
+
+
+<!-- GRADE 6 -->
+
+<div class="grade-card">
+
+<div class="grade-icon">
+
+<svg viewBox="0 0 48 48">
+
+<circle
+  cx="24"
+  cy="29"
+  r="9"
+/>
+
+<path d="M30 14c-9-3-15 3-15 12"/>
+
+</svg>
+
+</div>
+
+<div class="grade-name">
+Grade 6 Maths
+</div>
+
+<p class="grade-description">
+Move towards more advanced Maths concepts.
+</p>
+
+<div class="grade-price">
+₹199 <span>/ month</span>
+</div>
+
+<a
+  class="buy-btn"
+  href="index.html#programs"
+>
+Coming Soon
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =======================================================
+     OUR FOCUS
+======================================================= -->
+
+<section class="focus-section">
+
+
+<div class="container focus-layout">
+
+
+<div>
+
+<div class="focus-illustration">
+
+<svg viewBox="0 0 120 120">
+
+<!-- notebook -->
+
+<rect
+  x="27"
+  y="20"
+  width="66"
+  height="76"
+  rx="7"
+/>
+
+<!-- plus -->
+
+<path d="M60 34v18"/>
+
+<path d="M51 43h18"/>
+
+<!-- multiplication -->
+
+<path d="M45 64l12 12"/>
+
+<path d="M57 64L45 76"/>
+
+<!-- equals -->
+
+<path d="M67 66h15"/>
+
+<path d="M67 74h15"/>
+
+</svg>
+
+</div>
+
+</div>
+
+
+
+<div class="focus-heading">
+
+
+<div class="kicker">
+Our Focus
+</div>
+
+
+<h2>
+Learning is not about doing more homework.
+</h2>
+
+
+<p>
+The goal is to help children understand what they
+are learning, practise it regularly and become more
+confident in Maths.
+</p>
+
+
+
+<div class="focus-points">
+
+
+<div class="focus-point">
+
+<div class="focus-number">
+01
+</div>
+
+<div>
+
+<h3>
+Understand concepts
+</h3>
+
+<p>
+Children learn the idea behind a problem instead of simply memorising answers.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="focus-point">
+
+<div class="focus-number">
+02
+</div>
+
+<div>
+
+<h3>
+Practise regularly
+</h3>
+
+<p>
+Worksheets provide structured opportunities to practise and strengthen skills.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="focus-point">
+
+<div class="focus-number">
+03
+</div>
+
+<div>
+
+<h3>
+Clear doubts
+</h3>
+
+<p>
+Children can ask questions and receive guidance when they get stuck.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="focus-point">
+
+<div class="focus-number">
+04
+</div>
+
+<div>
+
+<h3>
+Build confidence
+</h3>
+
+<p>
+Consistent practice can help children feel more comfortable with Maths.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =======================================================
+     HOW IT WORKS
+======================================================= -->
+
+<section class="how-section">
+
+
+<div class="section-heading">
+
+<div class="kicker">
+How It Works
+</div>
+
+<h2>
+A simple learning journey.
+</h2>
+
+<p>
+Small, consistent steps can make learning easier.
+</p>
+
+</div>
+
+
+
+<div class="steps">
+
+
+<div class="step">
+
+<div class="step-number">
+01
+</div>
+
+<h3>
+Choose a grade
+</h3>
+
+<p>
+Select the Maths program that matches your child's school grade.
+</p>
+
+</div>
+
+
+
+<div class="step">
+
+<div class="step-number">
+02
+</div>
+
+<h3>
+Learn & practise
+</h3>
+
+<p>
+Children learn concepts and practise through weekly worksheets.
+</p>
+
+</div>
+
+
+
+<div class="step">
+
+<div class="step-number">
+03
+</div>
+
+<h3>
+Ask & improve
+</h3>
+
+<p>
+Use doubt support and live sessions to strengthen understanding.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =======================================================
+     PARENT CTA
+======================================================= -->
+
+<section class="parent-section">
+
+
+<div class="container">
+
+
+<div class="parent-box">
+
+
+<div>
+
+<div class="kicker">
+For Parents
+</div>
+
+
+<h2>
+Help your child build a regular Maths habit.
+</h2>
+
+
+<p>
+Instead of waiting until exams to start practising,
+give your child a simple weekly learning routine that
+supports understanding, practice and confidence.
+</p>
+
+</div>
+
+
+<a
+  href="mailto:hello@nextsprout.in"
+  class="parent-button"
+>
+Talk to NextSprout →
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<!-- =======================================================
+     CART OVERLAY
+======================================================= -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+<!-- =======================================================
+     CART DRAWER
+======================================================= -->
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h2>Your Cart</h2>
+    <button class="close-cart" onclick="closeCart()" type="button" aria-label="Close cart">×</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer">
+    <div class="cart-total" id="cartTotal">₹0</div>
+    <button class="checkout-btn" id="checkoutButton" onclick="proceedToCheckout()" type="button" disabled>Proceed to Payment →</button>
+  </div>
+</div>
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+
+<footer>
+
+
+<div class="container footer">
+
+
+<strong>
+✦ NextSprout
+</strong>
+
+
+<span>
+© 2026 NextSprout. Learning today. Growing for tomorrow.
+</span>
+
+
+</div>
+
+</footer>
+
+
+
+<script src="cart.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,2485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NextSprout — Learn. Grow. Become.</title>
+
+<meta name="description"
+content="NextSprout helps learners build strong foundations, practical skills, communication and confidence through programs and learning resources.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+
+  --purple:#5425A8;
+  --purple-dark:#3F1888;
+  --purple-light:#F1EAFF;
+
+  --teal:#8EDFE5;
+  --teal-dark:#207E88;
+  --teal-light:#E9FBFC;
+
+  --yellow:#FFE59A;
+  --yellow-light:#FFF7D8;
+
+  --cream:#FFFDF7;
+
+  --ink:#33204F;
+  --text:#443A50;
+  --muted:#756B80;
+
+  --white:#FFFFFF;
+  --line:#EAE4F0;
+
+  --green:#4FA96D;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:"Poppins",sans-serif;
+  color:var(--ink);
+  background:var(--white);
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button{
+  font-family:inherit;
+}
+
+.container{
+  width:min(1120px,92%);
+  margin:auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(234,228,240,.85);
+}
+
+.nav{
+  height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+
+/* LOGO */
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  font-weight:800;
+  font-size:1.28rem;
+
+  letter-spacing:-.5px;
+}
+
+.logo-mark{
+  width:39px;
+  height:39px;
+
+  border-radius:14px 14px 14px 5px;
+
+  background:var(--purple);
+
+  display:grid;
+  place-items:center;
+
+  transform:rotate(-3deg);
+}
+
+.logo-mark svg{
+  width:23px;
+  height:23px;
+}
+
+
+/* NAVIGATION */
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:27px;
+
+  color:#625872;
+
+  font-size:.92rem;
+  font-weight:600;
+}
+
+nav a{
+  transition:.2s ease;
+}
+
+nav a:hover{
+  color:var(--purple);
+}
+
+
+/* NAV ACTIONS */
+
+.nav-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.nav-btn{
+  background:var(--purple);
+  color:white;
+
+  padding:10px 17px;
+
+  border-radius:999px;
+
+  font-size:.86rem;
+  font-weight:700;
+
+  transition:.2s;
+}
+
+.nav-btn:hover{
+  background:var(--purple-dark);
+  transform:translateY(-1px);
+}
+
+
+/* CART */
+
+.cart-button{
+  border:1px solid var(--line);
+
+  background:white;
+
+  padding:9px 13px;
+
+  border-radius:999px;
+
+  cursor:pointer;
+
+  font-weight:700;
+
+  color:var(--ink);
+}
+
+.cart-count{
+  display:inline-grid;
+  place-items:center;
+
+  min-width:22px;
+  height:22px;
+
+  padding:0 5px;
+
+  border-radius:50%;
+
+  background:var(--purple);
+
+  color:white;
+
+  font-size:.7rem;
+
+  margin-left:4px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+  background:linear-gradient(
+    180deg,
+    var(--cream) 0%,
+    #ffffff 100%
+  );
+
+  padding:82px 0 82px;
+
+  overflow:hidden;
+}
+
+.hero-grid{
+
+  display:grid;
+
+  grid-template-columns:1.05fr .95fr;
+
+  align-items:center;
+
+  gap:58px;
+}
+
+
+/* BADGE */
+
+.badge{
+
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  background:var(--yellow-light);
+
+  color:#765800;
+
+  padding:8px 14px;
+
+  border-radius:999px;
+
+  font-size:.78rem;
+  font-weight:700;
+
+  margin-bottom:20px;
+}
+
+.badge-dot{
+
+  width:7px;
+  height:7px;
+
+  border-radius:50%;
+
+  background:#D6A800;
+}
+
+
+/* HERO HEADING */
+
+h1{
+
+  font-size:clamp(2.7rem,5.5vw,4.65rem);
+
+  line-height:1.05;
+
+  letter-spacing:-2.8px;
+
+  max-width:690px;
+}
+
+h1 span{
+  color:var(--purple);
+}
+
+.hero p{
+
+  color:var(--muted);
+
+  max-width:590px;
+
+  margin:22px 0 29px;
+
+  font-size:1.05rem;
+}
+
+
+/* BUTTONS */
+
+.actions{
+
+  display:flex;
+
+  gap:12px;
+
+  flex-wrap:wrap;
+}
+
+.btn{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:13px 20px;
+
+  border-radius:13px;
+
+  border:none;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.2s ease;
+}
+
+.primary{
+
+  background:var(--purple);
+
+  color:white;
+
+  box-shadow:0 9px 25px rgba(84,37,168,.17);
+}
+
+.primary:hover{
+
+  background:var(--purple-dark);
+
+  transform:translateY(-2px);
+}
+
+.secondary{
+
+  background:white;
+
+  color:var(--ink);
+
+  border:1px solid var(--line);
+}
+
+.secondary:hover{
+
+  border-color:#d7cde5;
+
+  transform:translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO ILLUSTRATION
+========================================================= */
+
+.hero-art{
+  position:relative;
+}
+
+.hero-illustration{
+
+  min-height:410px;
+
+  border-radius:34px;
+
+  background:var(--purple-light);
+
+  border:1px solid #e2d6f7;
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+.hero-circle{
+
+  position:absolute;
+
+  width:170px;
+  height:170px;
+
+  border-radius:50%;
+
+  background:var(--yellow);
+
+  right:-45px;
+  top:-45px;
+}
+
+.hero-circle-small{
+
+  position:absolute;
+
+  width:58px;
+  height:58px;
+
+  border-radius:50%;
+
+  background:var(--teal);
+
+  left:30px;
+  bottom:28px;
+}
+
+
+/* BOOK */
+
+.book{
+
+  position:absolute;
+
+  left:50%;
+  top:50%;
+
+  transform:translate(-50%,-48%) rotate(-3deg);
+
+  width:210px;
+  height:270px;
+
+  background:white;
+
+  border-radius:15px 20px 20px 15px;
+
+  box-shadow:
+    14px 18px 35px rgba(63,24,136,.15);
+}
+
+.book-spine{
+
+  position:absolute;
+
+  left:0;
+  top:0;
+  bottom:0;
+
+  width:17px;
+
+  background:#DED1F5;
+
+  border-radius:15px 0 0 15px;
+}
+
+.book-content{
+
+  position:absolute;
+
+  inset:30px 25px 25px 35px;
+}
+
+.book-line{
+
+  height:7px;
+
+  border-radius:99px;
+
+  background:#E9E1F7;
+
+  margin-bottom:11px;
+}
+
+.book-line.short{
+  width:62%;
+}
+
+.book-line.purple{
+
+  background:var(--purple);
+
+  width:72%;
+}
+
+.book-leaf{
+
+  position:absolute;
+
+  bottom:20px;
+  right:5px;
+}
+
+.book-leaf svg{
+
+  width:72px;
+  height:72px;
+}
+
+
+/* FLOATING CARDS */
+
+.float-card{
+
+  position:absolute;
+
+  background:white;
+
+  border:1px solid rgba(234,228,240,.9);
+
+  border-radius:17px;
+
+  padding:13px 16px;
+
+  box-shadow:0 15px 35px rgba(51,32,79,.11);
+
+  font-size:.82rem;
+
+  font-weight:700;
+}
+
+.float-card small{
+
+  display:block;
+
+  color:var(--muted);
+
+  font-size:.69rem;
+
+  font-weight:500;
+
+  margin-top:2px;
+}
+
+.float-one{
+
+  left:-18px;
+  bottom:57px;
+}
+
+.float-two{
+
+  right:-18px;
+  top:125px;
+}
+
+.float-icon{
+
+  width:30px;
+  height:30px;
+
+  border-radius:9px;
+
+  display:inline-grid;
+
+  place-items:center;
+
+  margin-right:7px;
+
+  vertical-align:middle;
+}
+
+.float-one .float-icon{
+  background:var(--yellow-light);
+}
+
+.float-two .float-icon{
+  background:var(--teal-light);
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+section{
+  padding:88px 0;
+}
+
+.section-head{
+
+  max-width:690px;
+
+  margin-bottom:40px;
+}
+
+.kicker{
+
+  color:var(--purple);
+
+  font-weight:800;
+
+  text-transform:uppercase;
+
+  letter-spacing:1.5px;
+
+  font-size:.74rem;
+}
+
+h2{
+
+  font-size:clamp(2rem,4vw,3rem);
+
+  line-height:1.12;
+
+  letter-spacing:-1.5px;
+
+  margin:8px 0 14px;
+}
+
+.section-head p{
+
+  color:var(--muted);
+
+  font-size:1rem;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about{
+  background:var(--teal-light);
+}
+
+.about-grid{
+
+  display:grid;
+
+  grid-template-columns:.95fr 1.05fr;
+
+  gap:70px;
+
+  align-items:center;
+}
+
+.about-copy{
+
+  background:white;
+
+  border-radius:28px;
+
+  padding:34px;
+
+  border:1px solid #DDF0F1;
+}
+
+.about-copy p{
+
+  color:var(--muted);
+
+  margin-top:17px;
+}
+
+.points{
+
+  display:grid;
+
+  gap:17px;
+}
+
+.point{
+
+  display:flex;
+
+  gap:15px;
+
+  padding:18px;
+
+  background:white;
+
+  border:1px solid #DDF0F1;
+
+  border-radius:19px;
+}
+
+.icon{
+
+  flex:none;
+
+  width:45px;
+  height:45px;
+
+  border-radius:14px;
+
+  background:var(--purple-light);
+
+  display:grid;
+
+  place-items:center;
+}
+
+.icon svg{
+
+  width:23px;
+  height:23px;
+}
+
+.point h3{
+
+  font-size:1rem;
+
+  margin-bottom:3px;
+}
+
+.point p{
+
+  color:var(--muted);
+
+  font-size:.87rem;
+}
+
+
+/* =========================================================
+   PROGRAMS
+========================================================= */
+
+.programs{
+  background:white;
+}
+
+.program-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:18px;
+}
+
+.program{
+
+  position:relative;
+
+  min-height:190px;
+
+  padding:25px;
+
+  border:1px solid var(--line);
+
+  border-radius:25px;
+
+  background:white;
+
+  cursor:pointer;
+
+  transition:.22s ease;
+
+  overflow:hidden;
+}
+
+.program:hover{
+
+  transform:translateY(-5px);
+
+  box-shadow:0 17px 38px rgba(51,32,79,.09);
+
+  border-color:#ddd2ef;
+}
+
+.program:nth-child(2),
+.program:nth-child(5){
+
+  background:var(--teal-light);
+
+  border-color:#d7eff1;
+}
+
+.program:nth-child(3){
+
+  background:var(--yellow-light);
+
+  border-color:#f5e8bd;
+}
+
+.program:nth-child(4){
+
+  background:var(--purple-light);
+
+  border-color:#e4d8f6;
+}
+
+.program-icon{
+
+  width:50px;
+  height:50px;
+
+  border-radius:16px;
+
+  background:var(--purple-light);
+
+  display:grid;
+
+  place-items:center;
+
+  margin-bottom:19px;
+}
+
+.program:nth-child(2) .program-icon,
+.program:nth-child(3) .program-icon,
+.program:nth-child(4) .program-icon,
+.program:nth-child(5) .program-icon{
+
+  background:white;
+}
+
+.program-icon svg{
+
+  width:26px;
+  height:26px;
+}
+
+.program h3{
+
+  font-size:1.06rem;
+
+  margin-bottom:7px;
+}
+
+.program p{
+
+  color:var(--muted);
+
+  font-size:.84rem;
+
+  max-width:270px;
+}
+
+.program-arrow{
+
+  position:absolute;
+
+  right:21px;
+  bottom:19px;
+
+  width:31px;
+  height:31px;
+
+  border-radius:50%;
+
+  background:white;
+
+  display:grid;
+
+  place-items:center;
+
+  color:var(--purple);
+
+  font-weight:800;
+}
+
+
+/* =========================================================
+   WHY NEXTSPROUT
+========================================================= */
+
+.why{
+  background:white;
+}
+
+.why-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:17px;
+}
+
+.why-card{
+
+  padding:25px 21px;
+
+  border-radius:22px;
+
+  border:1px solid var(--line);
+
+  background:white;
+}
+
+.why-card:nth-child(1){
+  background:var(--purple-light);
+}
+
+.why-card:nth-child(2){
+  background:var(--teal-light);
+}
+
+.why-card:nth-child(3){
+  background:var(--yellow-light);
+}
+
+.why-card:nth-child(4){
+  background:#F8F4FC;
+}
+
+.why-number{
+
+  font-size:.72rem;
+
+  font-weight:800;
+
+  color:var(--purple);
+
+  letter-spacing:1px;
+}
+
+.why-card h3{
+
+  font-size:1rem;
+
+  margin:28px 0 7px;
+}
+
+.why-card p{
+
+  color:var(--muted);
+
+  font-size:.83rem;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta{
+
+  padding:75px 0;
+
+  background:var(--cream);
+}
+
+.cta-box{
+
+  background:var(--purple);
+
+  color:white;
+
+  border-radius:30px;
+
+  padding:52px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:30px;
+
+  overflow:hidden;
+
+  position:relative;
+}
+
+.cta-box:after{
+
+  content:"";
+
+  position:absolute;
+
+  width:210px;
+  height:210px;
+
+  border-radius:50%;
+
+  background:rgba(255,229,154,.13);
+
+  right:-60px;
+  bottom:-100px;
+}
+
+.cta-box h2{
+
+  max-width:650px;
+
+  margin-top:8px;
+}
+
+.cta-box p{
+
+  color:#ddd4ed;
+
+  max-width:590px;
+
+  margin-top:8px;
+
+  font-size:.92rem;
+}
+
+.cta .primary{
+
+  background:var(--yellow);
+
+  color:var(--ink);
+
+  box-shadow:none;
+
+  white-space:nowrap;
+}
+
+.cta .primary:hover{
+
+  background:#ffdf76;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+  border-top:1px solid var(--line);
+
+  padding:27px 0;
+
+  color:#7D7287;
+
+  font-size:.78rem;
+
+  background:white;
+}
+
+.footer{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:20px;
+}
+
+.footer strong{
+  color:var(--ink);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:900px){
+
+  nav{
+    display:none;
+  }
+
+  .hero-grid,
+  .about-grid{
+
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+
+    padding-top:60px;
+  }
+
+  .hero-illustration{
+
+    min-height:360px;
+  }
+
+  .program-grid{
+
+    grid-template-columns:1fr 1fr;
+  }
+
+  .why-grid{
+
+    grid-template-columns:1fr 1fr;
+  }
+
+  .cta-box{
+
+    display:block;
+
+    padding:40px;
+  }
+
+  .cta .btn{
+
+    margin-top:22px;
+  }
+
+}
+
+
+@media(max-width:600px){
+
+  .container{
+
+    width:min(92%,520px);
+  }
+
+  .nav{
+
+    height:68px;
+  }
+
+  .logo{
+
+    font-size:1.1rem;
+  }
+
+  .logo-mark{
+
+    width:35px;
+    height:35px;
+  }
+
+  .nav-btn{
+    display:none;
+  }
+
+  .hero{
+
+    padding:50px 0 60px;
+  }
+
+  h1{
+
+    letter-spacing:-2px;
+  }
+
+  section{
+
+    padding:65px 0;
+  }
+
+  .program-grid,
+  .why-grid{
+
+    grid-template-columns:1fr;
+  }
+
+  .hero-illustration{
+
+    min-height:330px;
+  }
+
+  .book{
+
+    width:170px;
+    height:220px;
+  }
+
+  .float-one{
+
+    left:8px;
+    bottom:35px;
+  }
+
+  .float-two{
+
+    right:8px;
+    top:95px;
+  }
+
+  .cta-box{
+
+    padding:32px;
+
+    border-radius:24px;
+  }
+
+  .footer{
+
+    display:block;
+  }
+
+  .footer span{
+
+    display:block;
+
+    margin-top:8px;
+  }
+
+}
+
+
+/* =========================================================
+   CART DRAWER
+========================================================= */
+.cart-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(51,32,79,.35);
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:.25s ease;
+  z-index:999;
+}
+.cart-overlay.active{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+}
+.cart-drawer{
+  position:fixed;
+  top:0;
+  right:0;
+  width:min(420px,92vw);
+  height:100vh;
+  background:#fff;
+  transform:translateX(100%);
+  transition:transform .3s ease;
+  z-index:1000;
+  display:flex;
+  flex-direction:column;
+  box-shadow:-20px 0 50px rgba(51,32,79,.15);
+}
+.cart-drawer.active{transform:translateX(0);}
+.cart-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:22px 24px;
+  border-bottom:1px solid var(--line);
+}
+.cart-header h2{
+  font-size:1.25rem;
+  color:var(--ink);
+  margin:0;
+}
+.close-cart{
+  width:38px;
+  height:38px;
+  border:none;
+  border-radius:50%;
+  background:var(--purple-light);
+  color:var(--purple);
+  font-size:24px;
+  line-height:1;
+  cursor:pointer;
+}
+.cart-items{
+  flex:1;
+  overflow-y:auto;
+  padding:20px 24px;
+}
+.cart-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  padding:16px 0;
+  border-bottom:1px solid var(--line);
+}
+.cart-item-info{
+  min-width:0;
+}
+.cart-item-name{
+  font-size:.95rem;
+  font-weight:700;
+  color:var(--ink);
+  margin:0 0 4px;
+}
+.cart-item-meta{
+  font-size:.82rem;
+  color:var(--muted);
+  margin:0;
+}
+.cart-item-right{
+  text-align:right;
+  flex-shrink:0;
+}
+.cart-item-right strong{
+  display:block;
+  white-space:nowrap;
+  color:var(--purple);
+  margin-bottom:4px;
+}
+.cart-remove{
+  margin-top:0;
+  border:none;
+  background:none;
+  color:#b44;
+  font-family:inherit;
+  font-size:.78rem;
+  cursor:pointer;
+  padding:0;
+}
+.cart-remove:hover{
+  text-decoration:underline;
+}
+.cart-footer{
+  padding:20px 24px;
+  border-top:1px solid var(--line);
+  background:var(--cream);
+}
+.cart-total{
+  margin-bottom:16px;
+}
+.cart-total-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:6px;
+  font-weight:700;
+}
+.cart-total-row strong{
+  color:var(--purple);
+  font-size:1.1rem;
+}
+.checkout-btn{
+  width:100%;
+  border:none;
+  border-radius:999px;
+  padding:14px 18px;
+  background:var(--purple);
+  color:white;
+  font-family:inherit;
+  font-weight:700;
+  cursor:pointer;
+}
+.checkout-btn:hover{background:var(--purple-dark);}
+.checkout-btn:disabled{opacity:.5;cursor:not-allowed;}
+.empty-cart{
+  text-align:center;
+  padding:60px 20px;
+  color:var(--muted);
+}
+.empty-cart h3{
+  color:var(--ink);
+  margin-bottom:8px;
+}
+.empty-cart p{font-size:.9rem;}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+button:focus-visible,
+a:focus-visible{
+
+  outline:3px solid rgba(84,37,168,.25);
+
+  outline-offset:3px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =======================================================
+HEADER
+======================================================= -->
+
+<header>
+
+<div class="container nav">
+
+
+<a class="logo" href="#home">
+
+<span class="logo-mark">
+
+<svg
+viewBox="0 0 24 24"
+fill="none"
+stroke="white"
+stroke-width="1.8"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<path d="M12 19V9"/>
+
+<path d="M12 12C8 12 5.5 9.5 5.5 6.5C9.5 6.5 12 8.5 12 12Z"/>
+
+<path d="M12 9C12 5.5 14.5 3 18.5 3C18.5 7 16 9.5 12 9Z"/>
+
+</svg>
+
+</span>
+
+NextSprout
+
+</a>
+
+
+<nav>
+
+<a href="#home">Home</a>
+
+<a href="#about">About</a>
+
+<a href="#programs">Programs</a>
+
+<a href="ebooks.html">E-books</a>
+<a href="computer.html">Computer Skills</a>
+
+</nav>
+
+
+<div class="nav-actions">
+
+<a
+class="nav-btn"
+href="#programs">
+
+Explore Programs
+
+</a>
+
+
+<button
+class="cart-button"
+onclick="openCart()">
+
+Cart
+
+<span
+class="cart-count"
+data-cart-count
+id="cartCount">
+
+0
+
+</span>
+
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main>
+
+
+<!-- =======================================================
+HERO
+======================================================= -->
+
+<section
+class="hero"
+id="home">
+
+<div class="container hero-grid">
+
+
+<div>
+
+<div class="badge">
+
+<span class="badge-dot"></span>
+
+Learning today. Growing for tomorrow.
+
+</div>
+
+
+<h1>
+
+Helping learners
+
+<span>grow beyond</span>
+
+the classroom.
+
+</h1>
+
+
+<p>
+
+NextSprout helps learners build strong foundations,
+practical skills, communication and confidence —
+one small step at a time.
+
+</p>
+
+
+<div class="actions">
+
+<a
+class="btn primary"
+href="#programs">
+
+Explore Our Programs →
+
+</a>
+
+
+<a
+class="btn secondary"
+href="#about">
+
+Why NextSprout?
+
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-art">
+
+<div class="hero-illustration">
+
+<div class="hero-circle"></div>
+
+<div class="hero-circle-small"></div>
+
+
+<div class="book">
+
+<div class="book-spine"></div>
+
+
+<div class="book-content">
+
+<div class="book-line purple"></div>
+
+<div class="book-line"></div>
+
+<div class="book-line"></div>
+
+<div class="book-line short"></div>
+
+
+<div class="book-leaf">
+
+<svg
+viewBox="0 0 80 80"
+fill="none"
+stroke="#5425A8"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<path d="M40 64V31"/>
+
+<path d="M40 43C27 43 20 36 20 25C31 25 40 31 40 43Z"/>
+
+<path d="M40 34C40 23 47 16 59 16C59 28 51 34 40 34Z"/>
+
+</svg>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="float-card float-one">
+
+<span class="float-icon">
+
+<svg
+viewBox="0 0 24 24"
+fill="none"
+stroke="#5425A8"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3V4Z"/>
+
+<path d="M8 4v13a3 3 0 0 0 3 3"/>
+
+</svg>
+
+</span>
+
+Strong Basics
+
+<small>
+Build skills step by step
+</small>
+
+</div>
+
+
+<div class="float-card float-two">
+
+<span class="float-icon">
+
+<svg
+viewBox="0 0 24 24"
+fill="none"
+stroke="#207E88"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<path d="M4 5h16v11H4z"/>
+
+<path d="M8 20h8"/>
+
+<path d="M12 16v4"/>
+
+</svg>
+
+</span>
+
+Practical Skills
+
+<small>
+Learn things you can use
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+ABOUT
+======================================================= -->
+
+<section
+class="about"
+id="about">
+
+<div class="container about-grid">
+
+
+<div class="about-copy">
+
+<div class="kicker">
+About NextSprout
+</div>
+
+
+<h2>
+
+Learning should prepare us for life,
+not just exams.
+
+</h2>
+
+
+<p>
+
+We believe every learner deserves strong fundamentals,
+clear guidance and opportunities to practise what they learn.
+
+</p>
+
+
+<p>
+
+NextSprout brings together learning programs and resources
+that make learning simpler, more practical and more meaningful.
+
+</p>
+
+</div>
+
+
+<div class="points">
+
+
+<!-- POINT 1 -->
+
+<div class="point">
+
+<div class="icon">
+
+<svg
+viewBox="0 0 24 24"
+fill="none"
+stroke="#5425A8"
+stroke-width="1.8"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3V4Z"/>
+
+<path d="M8 4v13a3 3 0 0 0 3 3"/>
+
+</svg>
+
+</div>
+
+
+<div>
+
+<h3>
+Strong foundations
+</h3>
+
+<p>
+
+Build essential reading, writing and learning skills
+that support everything else.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- POINT 2 -->
+
+<div class="point">
+
+<div class="icon">
+
+<svg
+viewBox="0 0 24 24"
+fill="none"
+stroke="#5425A8"
+stroke-width="1.8"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<circle
+cx="12"
+cy="8"
+r="3"/>
+
+<path
+d="M5 20c.8-4 3-6 7-6s6.2 2 7 6"/>
+
+<path
+d="M19 5l1 2 2 .3-1.5 1.5.4 2.2-1.9-1-1.9 1 .4-2.2L17 7.3l2-.3Z"/>
+
+</svg>
+
+</div>
+
+
+<div>
+
+<h3>
+Confidence to learn
+</h3>
+
+<p>
+
+Practice communication, thinking and learning skills
+in a supportive environment.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- POINT 3 -->
+
+<div class="point">
+
+<div class="icon">
+
+<svg
+viewBox="0 0 24 24"
+fill="none"
+stroke="#5425A8"
+stroke-width="1.8"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<rect
+x="4"
+y="5"
+width="16"
+height="12"
+rx="2"/>
+
+<path d="M8 20h8"/>
+
+<path d="M12 17v3"/>
+
+</svg>
+
+</div>
+
+
+<div>
+
+<h3>
+Ready for tomorrow
+</h3>
+
+<p>
+
+Develop practical digital and life skills learners
+can use beyond the classroom.
+
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+PROGRAMS
+======================================================= -->
+
+<section
+class="programs"
+id="programs">
+
+<div class="container">
+
+
+<div class="section-head">
+
+<div class="kicker">
+Our Programs
+</div>
+
+
+<h2>
+Skills that help learners grow.
+</h2>
+
+
+<p>
+
+Explore practical learning experiences designed around
+skills learners use in school, work and everyday life.
+
+</p>
+
+</div>
+
+
+<div class="program-grid">
+
+
+<!-- =====================================================
+     READING
+===================================================== -->
+
+<article
+class="program"
+onclick="window.location.href='reading.html'">
+
+<div class="program-icon">
+
+<svg
+viewBox="0 0 24 24"
+fill="none"
+stroke="#5425A8"
+stroke-width="1.8"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3V4Z"/>
+
+<path d="M8 4v13a3 3 0 0 0 3 3"/>
+
+<path d="M11 8h5"/>
+
+<path d="M11 11h5"/>
+
+</svg>
+
+</div>
+
+
+<h3>
+Reading Program
+</h3>
+
+
+<p>
+
+Build stronger reading habits, fluency and confidence.
+
+</p>
+
+
+<div class="program-arrow">
+→
+</div>
+
+</article>
+
+
+<!-- =====================================================
+     ENGLISH SPEAKING
+===================================================== -->
+
+<article
+class="program"
+onclick="window.location.href='english-speaking.html'">
+
+<div class="program-icon">
+
+<svg
+viewBox="0 0 24 24"
+fill="none"
+stroke="#207E88"
+stroke-width="1.8"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<path d="M5 5h14v10H9l-4 4V5Z"/>
+
+<path d="M9 9h6"/>
+
+<path d="M8 12h5"/>
+
+</svg>
+
+</div>
+
+
+<h3>
+English Speaking
+</h3>
+
+
+<p>
+
+Practise everyday English and communicate with confidence.
+
+</p>
+
+
+<div class="program-arrow">
+→
+</div>
+
+</article>
+
+
+<!-- =====================================================
+     E-BOOKS
+===================================================== -->
+
+<article
+class="program"
+onclick="window.location.href='ebooks.html'">
+
+<div class="program-icon">
+
+<svg
+viewBox="0 0 24 24"
+fill="none"
+stroke="#5425A8"
+stroke-width="1.8"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3V4Z"/>
+
+<path d="M8 4v13a3 3 0 0 0 3 3"/>
+
+<path d="M11 8h5"/>
+
+<path d="M11 11h4"/>
+
+</svg>
+
+</div>
+
+
+<h3>
+E-books
+</h3>
+
+
+<p>
+
+Practical digital resources learners can use anytime.
+
+</p>
+
+
+<div class="program-arrow">
+→
+</div>
+
+</article>
+
+
+<!-- =====================================================
+     HOMEWORK SUPPORT
+===================================================== -->
+
+<article
+class="program"
+onclick="window.location.href='homework-support.html'">
+
+<div class="program-icon">
+
+<svg
+viewBox="0 0 24 24"
+fill="none"
+stroke="#5425A8"
+stroke-width="1.8"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<path d="M5 5h14v14H5z"/>
+
+<path d="M8 9h8"/>
+
+<path d="M8 12h8"/>
+
+<path d="M8 15h5"/>
+
+</svg>
+
+</div>
+
+
+<h3>
+Homework Support
+</h3>
+
+
+<p>
+
+Get structured support to understand and complete schoolwork.
+
+</p>
+
+
+<div class="program-arrow">
+→
+</div>
+
+</article>
+
+
+<!-- =====================================================
+     LEARNING & PRACTICE
+===================================================== -->
+
+<article
+class="program"
+onclick="window.location.href='learning.html'">
+
+<div class="program-icon">
+
+<svg
+viewBox="0 0 24 24"
+fill="none"
+stroke="#5425A8"
+stroke-width="1.8"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<path d="M5 19V6"/>
+
+<path d="M5 6c4-2 7 2 14 0v13c-7 2-10-2-14 0"/>
+
+<path d="M9 10h6"/>
+
+<path d="M9 13h5"/>
+
+</svg>
+
+</div>
+
+
+<h3>
+Learning & Practice
+</h3>
+
+
+<p>
+
+Make regular practice part of the learning routine.
+
+</p>
+
+
+<div class="program-arrow">
+→
+</div>
+
+</article>
+
+
+<!-- =====================================================
+     COMPUTER SKILLS
+===================================================== -->
+
+<article
+class="program"
+onclick="window.location.href='computer.html'">
+
+<div class="program-icon">
+
+<svg
+viewBox="0 0 24 24"
+fill="none"
+stroke="#5425A8"
+stroke-width="1.8"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<rect
+x="3"
+y="4"
+width="18"
+height="12"
+rx="2"/>
+
+<path d="M8 20h8"/>
+
+<path d="M12 16v4"/>
+
+</svg>
+
+</div>
+
+
+<h3>
+Computer Skills
+</h3>
+
+
+<p>
+
+Build practical computer and digital skills for school,
+work and everyday life.
+
+</p>
+
+
+<div class="program-arrow">
+→
+</div>
+
+</article>
+
+
+<!-- =====================================================
+     FUTURE
+===================================================== -->
+
+<article class="program">
+
+<div class="program-icon">
+
+<svg
+viewBox="0 0 24 24"
+fill="none"
+stroke="#5425A8"
+stroke-width="1.8"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<circle
+cx="12"
+cy="12"
+r="8"/>
+
+<path
+d="M12 8v4l3 2"/>
+
+</svg>
+
+</div>
+
+
+<h3>
+More Coming Soon
+</h3>
+
+
+<p>
+
+New learning experiences are being developed
+for different age groups.
+
+</p>
+
+
+<div class="program-arrow">
++
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+WHY NEXTSPROUT
+======================================================= -->
+
+<section class="why">
+
+<div class="container">
+
+
+<div class="section-head">
+
+<div class="kicker">
+The NextSprout Approach
+</div>
+
+
+<h2>
+
+Learning that feels useful,
+not overwhelming.
+
+</h2>
+
+
+<p>
+
+Our focus is simple:
+help learners understand, practise and use what they learn.
+
+</p>
+
+</div>
+
+
+<div class="why-grid">
+
+
+<!-- 01 -->
+
+<div class="why-card">
+
+<div class="why-number">
+01
+</div>
+
+
+<h3>
+Strong foundations
+</h3>
+
+
+<p>
+
+Build the basics first so learners
+have something solid to build on.
+
+</p>
+
+</div>
+
+
+<!-- 02 -->
+
+<div class="why-card">
+
+<div class="why-number">
+02
+</div>
+
+
+<h3>
+Practical learning
+</h3>
+
+
+<p>
+
+Connect learning with situations and skills
+learners can actually use.
+
+</p>
+
+</div>
+
+
+<!-- 03 -->
+
+<div class="why-card">
+
+<div class="why-number">
+03
+</div>
+
+
+<h3>
+Regular practice
+</h3>
+
+
+<p>
+
+Small, consistent practice can make learning
+easier to retain.
+
+</p>
+
+</div>
+
+
+<!-- 04 -->
+
+<div class="why-card">
+
+<div class="why-number">
+04
+</div>
+
+
+<h3>
+Grow with confidence
+</h3>
+
+
+<p>
+
+Learning is also about becoming comfortable
+asking, practising and trying.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+CTA
+======================================================= -->
+
+<section class="cta">
+
+<div class="container">
+
+
+<div class="cta-box">
+
+
+<div>
+
+<div
+class="kicker"
+style="color:var(--yellow)">
+
+Start the journey
+
+</div>
+
+
+<h2>
+
+Let's help learners grow with confidence.
+
+</h2>
+
+
+<p>
+
+NextSprout is built around a simple idea:
+strong foundations today create stronger possibilities tomorrow.
+
+</p>
+
+</div>
+
+
+<a
+class="btn primary"
+href="mailto:hello@nextsprout.in">
+
+Talk to NextSprout →
+
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- =======================================================
+SHARED CART DRAWER
+======================================================= -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+<div class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+  <div class="cart-header">
+    <h2>Your Cart</h2>
+    <button class="close-cart" type="button" onclick="closeCart()" aria-label="Close cart">×</button>
+  </div>
+
+  <div class="cart-items" id="cartItems"></div>
+
+  <div class="cart-footer">
+    <div class="cart-total" id="cartTotal">₹0</div>
+
+    <button class="checkout-btn" id="checkoutButton" type="button" onclick="proceedToCheckout()" disabled>
+      Proceed to Checkout →
+    </button>
+  </div>
+</div>
+
+<!-- =======================================================
+FOOTER
+======================================================= -->
+
+<footer>
+
+<div class="container footer">
+
+<strong>
+NextSprout
+</strong>
+
+
+<span>
+
+© 2026 NextSprout.
+Learning today. Growing for tomorrow.
+
+</span>
+
+</div>
+
+</footer>
+
+
+<!-- =======================================================
+SHARED CART
+======================================================= -->
+
+<script src="cart.js"></script>
+
+
+</body>
+</html>
